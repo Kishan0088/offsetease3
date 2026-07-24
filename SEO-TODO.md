@@ -46,10 +46,13 @@ build output `/`. The same `_redirects` applies.
    "apply authors.json" and I'll wire the byline + BlogPosting schema on all 13
    articles and add `Person` schema to `/leadership`. The `/leadership` page is
    currently anonymous by design, so this needs real people first.
-2. **Postal address + phone** (PHASE 3a). Organization schema has no street/
-   city/postcode/telephone — a trust gap for EU buyers (≈60% of impressions).
-   → Give me a real address + phone and I'll add `PostalAddress` + `telephone`
-   sitewide. Do not invent one.
+
+## ✅ Resolved with your input (2026-07-24)
+
+- **Postal address + phone** (PHASE 3a) — added sitewide to the Organization
+  schema: PostalAddress (Ahmedabad, Gujarat, IN), telephone +91 88661 42748,
+  email info@offsetease.com and LinkedIn were already present. Not yet shown
+  as visible text on /contact — say the word if you want it displayed there too.
 
 ## 🧩 Not started (need decisions / human content)
 
