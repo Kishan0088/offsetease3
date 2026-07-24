@@ -692,6 +692,16 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
   .cert-grid{grid-template-columns:1fr;}
 }
 
+
+/* Related reading (SEO internal linking) */
+.related-reading{padding:3.5rem 0;border-top:1px solid var(--line);}
+.related-reading h2{margin-bottom:1.25rem;}
+.rr-list{list-style:none;margin:0;padding:0;display:grid;gap:.85rem;max-width:70ch;}
+.rr-list a{color:var(--teal);text-decoration:none;font-weight:600;line-height:1.4;}
+.rr-list a:hover{text-decoration:underline;}
+.rr-sectors{margin:1.75rem 0 0;font-size:.95rem;}
+.rr-sectors a{color:var(--teal);text-decoration:none;font-weight:600;}
+.rr-sectors a:hover{text-decoration:underline;}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://offsetease.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://offsetease.com/services"},{"@type":"ListItem","position":3,"name":"SBTi Target Setting & Validation","item":"https://offsetease.com/sbti"}]},{"@type":"Service","name":"SBTi Target Setting & Validation","serviceType":"SBTi Target Setting & Validation","description":"The Science Based Targets initiative (SBTi) validates corporate emissions-reduction targets against what climate science requires for a 1.5°C pathway. SBTi validation has become the de facto credibility standard for corporate climate commitments — demanded by investors, embedded in customer scorecards, and increasingly cascaded contractually through supply chains.","url":"https://offsetease.com/sbti","provider":{"@type":"Organization","name":"OffsetEase","url":"https://offsetease.com"},"areaServed":"Global"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between near-term and net-zero targets?","acceptedAnswer":{"@type":"Answer","text":"Near-term targets cover 5–10 years and drive immediate reductions (typically ~4.2%/year for 1.5°C alignment on Scopes 1–2). Net-zero targets commit to ~90% absolute reduction by 2050 with residual emissions neutralised by permanent removals. SBTi validates both under its Corporate Net-Zero Standard."}},{"@type":"Question","name":"Do we have to include Scope 3?","acceptedAnswer":{"@type":"Answer","text":"If Scope 3 is 40% or more of your total — true for most companies — near-term targets must cover at least two-thirds of it, and net-zero targets 90%. This is where target-setting becomes strategy: supplier engagement, product design and business-model questions, not arithmetic."}},{"@type":"Question","name":"Can we use carbon credits to meet SBTi targets?","acceptedAnswer":{"@type":"Answer","text":"No — offsets do not count toward SBTi reduction targets. Permanent removals play a role only in neutralising the final ~10% residual at net-zero. Credits can be used for contribution claims beyond the value chain, but they never substitute for reduction."}},{"@type":"Question","name":"How long does SBTi validation take?","acceptedAnswer":{"@type":"Answer","text":"Preparation typically takes 2–4 months (baseline QA, modelling, internal approval), and SBTi's validation queue adds further months depending on service level. Companies announcing targets before validation risk public correction — sequencing matters."}},{"@type":"Question","name":"What happens if we miss a validated target?","acceptedAnswer":{"@type":"Answer","text":"SBTi requires progress disclosure and recalculation under significant changes; persistent failure leads to removal from the dashboard — a visible credibility event. The defence is set targets you have modelled the cost of delivering, which is exactly what the validation process should force."}}]}]}</script>
 </head>
@@ -943,7 +953,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
     </section>
 
     
-  <section class="bg-teal cta-band">
+  <section class="related-reading"><div class="container"><h2>Related reading</h2><ul class="rr-list"><li><a href="sbti-net-zero-standard-v2">SBTi Corporate Net-Zero Standard V2: what the draft changes</a></li></ul></div></section><section class="bg-teal cta-band">
     <h2 data-reveal>Let's talk about your business — <em>before</em> we talk about sustainability.</h2>
     <p data-reveal data-delay="1">A senior advisor will respond within one business day. Confidential, no obligation.</p>
     <div class="cta-band__actions" data-reveal data-delay="2">

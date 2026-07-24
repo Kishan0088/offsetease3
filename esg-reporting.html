@@ -692,6 +692,16 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
   .cert-grid{grid-template-columns:1fr;}
 }
 
+
+/* Related reading (SEO internal linking) */
+.related-reading{padding:3.5rem 0;border-top:1px solid var(--line);}
+.related-reading h2{margin-bottom:1.25rem;}
+.rr-list{list-style:none;margin:0;padding:0;display:grid;gap:.85rem;max-width:70ch;}
+.rr-list a{color:var(--teal);text-decoration:none;font-weight:600;line-height:1.4;}
+.rr-list a:hover{text-decoration:underline;}
+.rr-sectors{margin:1.75rem 0 0;font-size:.95rem;}
+.rr-sectors a{color:var(--teal);text-decoration:none;font-weight:600;}
+.rr-sectors a:hover{text-decoration:underline;}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://offsetease.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://offsetease.com/services"},{"@type":"ListItem","position":3,"name":"ESG & Sustainability Reporting","item":"https://offsetease.com/esg-reporting"}]},{"@type":"Service","name":"ESG & Sustainability Reporting","serviceType":"ESG & Sustainability Reporting","description":"Sustainability reporting has become regulated, assured disclosure. BRSR Core in India, CSRD/ESRS in the EU and the IFRS S1/S2 global baseline all require decision-useful, evidence-backed sustainability data — increasingly under limited or reasonable assurance. The efficient response is one governed data architecture serving every framework, not parallel annual scrambles.","url":"https://offsetease.com/esg-reporting","provider":{"@type":"Organization","name":"OffsetEase","url":"https://offsetease.com"},"areaServed":"Global"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which reporting frameworks apply to us?","acceptedAnswer":{"@type":"Answer","text":"It depends on listing, size and markets: BRSR for the top listed companies in India (with BRSR Core assurance), CSRD/ESRS for companies in scope of EU activity thresholds, IFRS S1/S2 as jurisdictions adopt the ISSB baseline, and GRI/CDP where stakeholders demand them. We map the obligation set first — most companies are surprised in both directions."}},{"@type":"Question","name":"What is double materiality?","acceptedAnswer":{"@type":"Answer","text":"Assessing sustainability topics on two axes: their effect on your enterprise value (financial materiality) and your impact on people and environment (impact materiality). CSRD requires it explicitly; it is also simply the fastest way to stop over-disclosing on what doesn't matter and under-disclosing on what does."}},{"@type":"Question","name":"How do BRSR and IFRS S1/S2 relate?","acceptedAnswer":{"@type":"Answer","text":"They overlap substantially in climate data, governance and risk content. Companies facing both should build one architecture and map outward — the marginal cost of the second framework then falls dramatically, and the numbers in each filing reconcile by construction."}},{"@type":"Question","name":"Where do we start if our reporting is weak?","acceptedAnswer":{"@type":"Answer","text":"Double materiality, then data architecture for the material topics only. The most common failure is starting with the template — filling frameworks topic-by-topic produces maximal cost and minimal credibility."}},{"@type":"Question","name":"What is the assurance roadmap?","acceptedAnswer":{"@type":"Answer","text":"Voluntary review, then limited assurance, then reasonable assurance — with BRSR Core and CSRD already mandating stages of that path. Building controls one cycle before they are mandatory is materially cheaper than retrofitting under audit pressure."}}]}]}</script>
 </head>
@@ -943,7 +953,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
     </section>
 
     
-  <section class="bg-teal cta-band">
+  <section class="related-reading"><div class="container"><h2>Related reading</h2><ul class="rr-list"><li><a href="cdp-disclosure-2026">CDP after the overhaul: one IFRS-aligned questionnaire, and how to score well</a></li><li><a href="brsr-core-assurance-india">BRSR Core explained: India's assured sustainability disclosure</a></li><li><a href="ifrs-s1-s2-issb-explained">IFRS S1 and S2 explained: the global baseline for sustainability disclosure</a></li></ul></div></section><section class="bg-teal cta-band">
     <h2 data-reveal>Let's talk about your business — <em>before</em> we talk about sustainability.</h2>
     <p data-reveal data-delay="1">A senior advisor will respond within one business day. Confidential, no obligation.</p>
     <div class="cta-band__actions" data-reveal data-delay="2">

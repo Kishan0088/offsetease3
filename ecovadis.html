@@ -692,6 +692,16 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
   .cert-grid{grid-template-columns:1fr;}
 }
 
+
+/* Related reading (SEO internal linking) */
+.related-reading{padding:3.5rem 0;border-top:1px solid var(--line);}
+.related-reading h2{margin-bottom:1.25rem;}
+.rr-list{list-style:none;margin:0;padding:0;display:grid;gap:.85rem;max-width:70ch;}
+.rr-list a{color:var(--teal);text-decoration:none;font-weight:600;line-height:1.4;}
+.rr-list a:hover{text-decoration:underline;}
+.rr-sectors{margin:1.75rem 0 0;font-size:.95rem;}
+.rr-sectors a{color:var(--teal);text-decoration:none;font-weight:600;}
+.rr-sectors a:hover{text-decoration:underline;}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://offsetease.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://offsetease.com/services"},{"@type":"ListItem","position":3,"name":"EcoVadis Rating & Score Improvement","item":"https://offsetease.com/ecovadis"}]},{"@type":"Service","name":"EcoVadis Rating & Score Improvement","serviceType":"EcoVadis Rating & Score Improvement","description":"EcoVadis is the most widely used supplier sustainability rating, scoring companies across environment, labour & human rights, ethics and sustainable procurement on a documentation-driven methodology. Large buyers set minimum EcoVadis medals as procurement conditions — which makes score improvement a commercial project with a deadline, not a reporting exercise.","url":"https://offsetease.com/ecovadis","provider":{"@type":"Organization","name":"OffsetEase","url":"https://offsetease.com"},"areaServed":"Global"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is EcoVadis scored?","acceptedAnswer":{"@type":"Answer","text":"Four themes — environment, labour & human rights, ethics, sustainable procurement — weighted by company size, sector and geography. Scoring is overwhelmingly documentation-driven: policies, actions and results must be evidenced in documents that meet specific criteria. Strong practice without conformant documents scores poorly."}},{"@type":"Question","name":"How fast can our EcoVadis score improve?","acceptedAnswer":{"@type":"Answer","text":"One assessment cycle is typically enough to move one band — Bronze to Silver, Silver to Gold — where the gap is documentation. Performance gaps (no management system, no KPIs) need real implementation time and usually span two cycles."}},{"@type":"Question","name":"Why did our score drop when nothing changed?","acceptedAnswer":{"@type":"Answer","text":"EcoVadis tightens its methodology continuously and medal thresholds are percentile-based — they rise as the rated population improves. A static submission is a falling score. Re-approaching each cycle against the current methodology is the only defence."}},{"@type":"Question","name":"What documents does EcoVadis actually reward?","acceptedAnswer":{"@type":"Answer","text":"Formal policies with scope and ownership, evidence of deployed actions (procedures, training records, certifications such as ISO 14001), and reported results (KPIs, audit outcomes, sustainability reports). Date-stamped, branded, specific documents — generic statements score near zero."}},{"@type":"Question","name":"Is the EcoVadis questionnaire the same for everyone?","acceptedAnswer":{"@type":"Answer","text":"No — it adapts to size, industry and geography, which changes both the questions and the weighting. That is why copying another company's approach underperforms: the playbook has to match your questionnaire."}}]}]}</script>
 </head>
@@ -943,7 +953,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
     </section>
 
     
-  <section class="bg-teal cta-band">
+  <section class="related-reading"><div class="container"><h2>Related reading</h2><ul class="rr-list"><li><a href="ecovadis-scoring-bronze-to-gold">How EcoVadis scoring really works — and how to move from Bronze to Gold</a></li></ul><p class="rr-sectors">Sectors we work with: <a href="pharma">Pharmaceuticals</a>, <a href="textiles">Textiles &amp; Apparel</a>.</p></div></section><section class="bg-teal cta-band">
     <h2 data-reveal>Let's talk about your business — <em>before</em> we talk about sustainability.</h2>
     <p data-reveal data-delay="1">A senior advisor will respond within one business day. Confidential, no obligation.</p>
     <div class="cta-band__actions" data-reveal data-delay="2">
