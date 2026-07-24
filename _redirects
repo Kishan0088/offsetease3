@@ -1,0 +1,25 @@
+# OffsetEase — SEO redirects
+# Consolidate .html duplicate URLs to their extensionless canonical form.
+# 301 permanent, server-side. The trailing "!" forces the redirect even though
+# the source file exists (needed so /slug is still served from slug.html while
+# /slug.html itself redirects). Works on Netlify and Cloudflare Pages.
+
+# Homepage
+/index.html                      /                           301!
+
+# The 11 audited duplicate pairs (explicit for clarity/verification)
+/esg-reporting.html              /esg-reporting              301!
+/resources.html                  /resources                  301!
+/life-cycle-assessment.html      /life-cycle-assessment      301!
+/ghg-accounting.html             /ghg-accounting             301!
+/epd.html                        /epd                        301!
+/product-carbon-footprint.html   /product-carbon-footprint   301!
+/ecovadis.html                   /ecovadis                   301!
+/cbam.html                       /cbam                       301!
+/cdp.html                        /cdp                        301!
+/climate-risk.html               /climate-risk               301!
+/privacy.html                    /privacy                    301!
+
+# Catch-all: every other .html URL on the site has the same duplicate problem.
+# This future-proofs any .html path added later.
+/*.html                          /:splat                     301!

@@ -103,6 +103,12 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://offsetease.com/sitemap</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://offsetease.com/ghg-accounting</loc>
     <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>

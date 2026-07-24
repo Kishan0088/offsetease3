@@ -1,0 +1,28 @@
+{
+  "_comment": "SEO PHASE 3e/3g — fill in real people, then tell Claude Code to apply. Do NOT invent names. Each article's BlogPosting.author and the /leadership Person schema are generated from this file. 'slug' becomes the /leadership#slug anchor.",
+  "authors": [
+    {
+      "slug": "TODO-author-1",
+      "name": "TODO: Full Name",
+      "jobTitle": "TODO: e.g. Partner, Carbon Markets",
+      "credentials": "TODO: e.g. GHG Protocol lead verifier; 12 yrs ISCC audits",
+      "knowsAbout": ["TODO: ISCC", "TODO: CBAM"],
+      "linkedin": "TODO: https://www.linkedin.com/in/..."
+    }
+  ],
+  "article_bylines": {
+    "iscc-eu-plus-corsia-which-certification": "TODO-author-1",
+    "cbam-definitive-period-2026": "TODO-author-1",
+    "sbti-net-zero-standard-v2": "TODO-author-1",
+    "cdp-disclosure-2026": "TODO-author-1",
+    "brsr-core-assurance-india": "TODO-author-1",
+    "lca-pcf-epd-difference": "TODO-author-1",
+    "eudr-deforestation-regulation-explained": "TODO-author-1",
+    "ecovadis-scoring-bronze-to-gold": "TODO-author-1",
+    "scope-3-emissions-measurement": "TODO-author-1",
+    "ifrs-s1-s2-issb-explained": "TODO-author-1",
+    "carbon-credit-integrity-icvcm-vcmi": "TODO-author-1",
+    "net-zero-pathway-funding": "TODO-author-1",
+    "i-rec-renewable-energy-certificates": "TODO-author-1"
+  }
+}

@@ -1,0 +1,7 @@
+# OffsetEase — Netlify config
+# Plain static site: files live at the repo root, no build step.
+# Redirects are defined in ./_redirects (the single source of truth), which
+# Netlify reads from the publish root. Cloudflare Pages reads the same file.
+[build]
+  publish = "."
+  command = ""
