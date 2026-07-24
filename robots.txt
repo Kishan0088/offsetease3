@@ -23,4 +23,13 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 Sitemap: https://offsetease.com/sitemap.xml
