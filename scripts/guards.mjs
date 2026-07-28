@@ -72,6 +72,27 @@ for (const f of htmlFiles) {
   }
 }
 
+// ── Guard 7: no broken internal links (Phase E) ────────────────────────────
+const exists = new Set(readdirSync(SITE));
+// also allow assets in subdirs (none today, but future-proof)
+const resolveHref = (href) => {
+  let h = href.split("#")[0].split("?")[0];
+  if (h === "" || h === "./" || h === "/") return "index.html";
+  if (h.startsWith("/")) h = h.slice(1);
+  if (h === "") return "index.html";
+  if (exists.has(h)) return h;                 // asset or exact file
+  if (exists.has(h + ".html")) return h + ".html"; // extensionless page
+  return null;                                  // unresolved
+};
+for (const f of htmlFiles) {
+  const html = read(f);
+  for (const m of html.matchAll(/href="([^"]+)"/g)) {
+    const href = m[1];
+    if (/^(https?:)?\/\//.test(href) || /^(mailto:|tel:|javascript:)/.test(href) || href.startsWith("#")) continue;
+    if (resolveHref(href) === null) add("broken-internal-link", `${f} → ${href}`);
+  }
+}
+
 // ── Report ─────────────────────────────────────────────────────────────────
 if (violations.length === 0) {
   console.log(`✓ guards passed — ${htmlFiles.length} pages checked, 0 violations.`);
