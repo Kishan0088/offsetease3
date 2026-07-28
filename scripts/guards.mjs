@@ -53,6 +53,25 @@ if (!existsSync(join(SITE, "sitemap.xml"))) {
   if (bad.length) add("sitemap-html-url", bad.join(", "));
 }
 
+// ── Guard 5: a visible FAQ block must carry FAQPage schema (Phase C) ───────
+for (const f of htmlFiles) {
+  const html = read(f);
+  if (html.includes('class="acc__item"') && !/"@type"\s*:\s*"FAQPage"/.test(html)) {
+    add("faq-without-faqpage", f);
+  }
+}
+
+// ── Guard 6: BlogPosting must have author + datePublished (Phase C) ─────────
+for (const f of htmlFiles) {
+  const html = read(f);
+  for (const m of html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)) {
+    const blk = m[1];
+    if (!blk.includes('"BlogPosting"')) continue;
+    if (!blk.includes('"author"')) add("article-without-author", f);
+    if (!blk.includes('"datePublished"')) add("article-without-datePublished", f);
+  }
+}
+
 // ── Report ─────────────────────────────────────────────────────────────────
 if (violations.length === 0) {
   console.log(`✓ guards passed — ${htmlFiles.length} pages checked, 0 violations.`);
