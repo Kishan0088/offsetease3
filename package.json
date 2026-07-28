@@ -1,0 +1,16 @@
+{
+  "name": "offsetease-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "OffsetEase — climate, carbon & ESG advisory site (static, Eleventy-built).",
+  "scripts": {
+    "build": "rm -rf _site && eleventy",
+    "serve": "eleventy --serve",
+    "guard": "node scripts/guards.mjs",
+    "check": "npm run build && npm run guard"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}
