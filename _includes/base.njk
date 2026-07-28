@@ -3,34 +3,32 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ISCC EU vs PLUS vs CORSIA: Which One Do You Need?</title>
-<meta name="description" content="ISCC EU, PLUS, CORSIA and Carbon Footprint compared side by side — what each certifies, which market it opens, how mass balance works, and what certification costs and takes." />
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}" />
 <meta name="theme-color" content="#0c4d56" />
-<meta name="robots" content="index, follow" />
+<meta name="robots" content="{{ robots or "index, follow" }}" />
 <link rel="icon" type="image/png" href="/favicon.png" />
 <link rel="icon" href="/favicon.ico" sizes="any" />
 <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content="ISCC EU vs PLUS vs CORSIA: Which One Do You Need?" />
-<meta property="og:description" content="ISCC EU, PLUS, CORSIA and Carbon Footprint compared side by side — what each certifies, which market it opens, how mass balance works, and what certification costs and takes." />
-<meta property="og:url" content="https://offsetease.com/iscc-eu-plus-corsia-which-certification" />
+<meta property="og:title" content="{{ title }}" />
+<meta property="og:description" content="{{ description }}" />
+<meta property="og:url" content="https://offsetease.com/{{ slug }}" />
 <meta property="og:image" content="https://offsetease.com/og-cover.png" />
 <meta property="og:site_name" content="OffsetEase" />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="ISCC EU vs PLUS vs CORSIA: Which One Do You Need?" />
-<meta name="twitter:description" content="ISCC EU, PLUS, CORSIA and Carbon Footprint compared side by side — what each certifies, which market it opens, how mass balance works, and what certification costs and takes." />
+<meta name="twitter:title" content="{{ title }}" />
+<meta name="twitter:description" content="{{ description }}" />
 <meta name="twitter:image" content="https://offsetease.com/og-cover.png" />
 
-<link rel="canonical" href="https://offsetease.com/iscc-eu-plus-corsia-which-certification" />
-
-<!-- JSON-LD Organization -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"OffsetEase","url":"https://offsetease.com","logo":"https://offsetease.com/og-cover.png","image":"https://offsetease.com/og-cover.png","description":"Sustainability consulting for enterprises and SMEs: GHG accounting, product carbon footprint, LCA, EPD, EcoVadis and CDP score improvement, CBAM compliance, ESG reporting, climate risk, SBTi, net zero, carbon credits and renewable energy.","areaServed":"Global","knowsAbout":["GHG Accounting","Carbon Footprint","Product Carbon Footprint","PCF","Life Cycle Assessment","LCA","Environmental Product Declaration","EPD","EcoVadis","EcoVadis Score Improvement","CDP","CBAM","SBTi","Net Zero","Decarbonization","ESG Reporting","Sustainability Reporting","BRSR","CSRD","IFRS S2","Climate Risk","TCFD","Carbon Credits","Renewable Energy","Power Purchase Agreements","RECs"],"telephone":"+91 88661 42748","address":{"@type":"PostalAddress","addressLocality":"Ahmedabad","addressRegion":"Gujarat","addressCountry":"IN"},"contactPoint":{"@type":"ContactPoint","contactType":"sales","email":"info@offsetease.com","telephone":"+91 88661 42748","areaServed":"Global","availableLanguage":"en"},"sameAs":["https://www.linkedin.com/company/offsetease"]}</script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="canonical" href="https://offsetease.com/{{ slug }}" />
+{% raw %}<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"OffsetEase","url":"https://offsetease.com","logo":"https://offsetease.com/og-cover.png","image":"https://offsetease.com/og-cover.png","description":"Sustainability consulting for enterprises and SMEs: GHG accounting, product carbon footprint, LCA, EPD, EcoVadis and CDP score improvement, CBAM compliance, ESG reporting, climate risk, SBTi, net zero, carbon credits and renewable energy.","areaServed":"Global","knowsAbout":["GHG Accounting","Carbon Footprint","Product Carbon Footprint","PCF","Life Cycle Assessment","LCA","Environmental Product Declaration","EPD","EcoVadis","EcoVadis Score Improvement","CDP","CBAM","SBTi","Net Zero","Decarbonization","ESG Reporting","Sustainability Reporting","BRSR","CSRD","IFRS S2","Climate Risk","TCFD","Carbon Credits","Renewable Energy","Power Purchase Agreements","RECs"],"telephone":"+91 88661 42748","address":{"@type":"PostalAddress","addressLocality":"Ahmedabad","addressRegion":"Gujarat","addressCountry":"IN"},"contactPoint":{"@type":"ContactPoint","contactType":"sales","email":"info@offsetease.com","telephone":"+91 88661 42748","areaServed":"Global","availableLanguage":"en"},"sameAs":["https://www.linkedin.com/company/offsetease"]}</script>{% endraw %}
+{% if jsonld %}<script type="application/ld+json">{{ jsonld | safe }}</script>{% endif %}
+{% raw %}<link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet" />
 
@@ -692,12 +690,20 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
   .cert-grid{grid-template-columns:1fr;}
 }
 
-.cmp-table{width:100%;border-collapse:collapse;font-size:.95rem;margin:1.25rem 0;}.cmp-table caption{text-align:left;font-weight:600;margin-bottom:.5rem;}.cmp-table th,.cmp-table td{border:1px solid var(--line);padding:.6rem .75rem;text-align:left;vertical-align:top;}.cmp-table thead th{background:var(--paper-2);}.cmp-table th[scope=row]{white-space:nowrap;}.cmp-table a{color:var(--teal);text-decoration:none;font-weight:600;}.cmp-table a:hover{text-decoration:underline;}
-</style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://offsetease.com/"},{"@type":"ListItem","position":2,"name":"Insights","item":"https://offsetease.com/insights"},{"@type":"ListItem","position":3,"name":"ISCC EU vs ISCC PLUS vs CORSIA: which certification your business needs","item":"https://offsetease.com/iscc-eu-plus-corsia-which-certification"}]},{"@type":"BlogPosting","headline":"ISCC EU vs ISCC PLUS vs CORSIA: which certification your business needs","description":"ISCC EU, PLUS, CORSIA and Carbon Footprint serve different markets. How to choose the right certification — or the right combination.","url":"https://offsetease.com/iscc-eu-plus-corsia-which-certification","datePublished":"2026-06-01","author":{"@type":"Organization","name":"OffsetEase"},"publisher":{"@type":"Organization","name":"OffsetEase","url":"https://offsetease.com","logo":{"@type":"ImageObject","url":"https://offsetease.com/og-cover.png"}},"articleSection":"Certification","inLanguage":"en"}]}</script>
-</head>
 
-<body>
+/* Related reading (SEO internal linking) */
+.related-reading{padding:3.5rem 0;border-top:1px solid var(--line);}
+.related-reading h2{margin-bottom:1.25rem;}
+.rr-list{list-style:none;margin:0;padding:0;display:grid;gap:.85rem;max-width:70ch;}
+.rr-list a{color:var(--teal);text-decoration:none;font-weight:600;line-height:1.4;}
+.rr-list a:hover{text-decoration:underline;}
+.rr-sectors{margin:1.75rem 0 0;font-size:.95rem;}
+.rr-sectors a{color:var(--teal);text-decoration:none;font-weight:600;}
+.rr-sectors a:hover{text-decoration:underline;}
+</style>
+{% endraw %}
+</head>
+{% raw %}<body>
 
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
@@ -795,66 +801,9 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
 
 </aside>
 
-<main id="app">
-    <section class="page-header">
-      <div class="container">
-        <div class="crumbs"><a href="./">Home</a><span class="sep">/</span><a href="insights">Insights</a><span class="sep">/</span><span class="current">Certification</span></div>
-        <h1>ISCC EU vs ISCC PLUS vs CORSIA: which certification your business needs</h1>
-        <p class="page-header__lead">ISCC EU, PLUS, CORSIA and Carbon Footprint serve different markets. How to choose the right certification — or the right combination.</p>
-        <div class="article-meta">Certification · June 2026 · 8 min read · By OffsetEase Advisory</div>
-      </div>
-    </section>
-    <article>
-      <div class="container">
-        <div class="prose-page article-body">
-          <p>ISCC — International Sustainability and Carbon Certification — is the most widely used certification system for sustainable feedstocks, biofuels, and recycled and bio-based materials. The confusion is that ISCC is not one thing: it is a family of schemes, and the right one depends entirely on your product and your market. Choosing wrong, or assuming one covers all, is a common and expensive mistake. If you need help choosing and preparing, our <a href="iscc">ISCC certification consulting</a> covers ISCC EU, PLUS, CORSIA and Carbon Footprint end to end.</p><div class="table-wrap" style="overflow-x:auto"><table class="cmp-table"><caption>ISCC schemes at a glance</caption><thead><tr><th scope="col">Scheme</th><th scope="col">What it certifies</th><th scope="col">Market it opens</th><th scope="col">Basis</th></tr></thead><tbody><tr><th scope="row"><a href="iscc-eu-certification">ISCC EU</a></th><td>Biofuels, bioliquids and biomass fuels</td><td>EU energy market</td><td>EU Renewable Energy Directive (RED III) <!-- VERIFY: RED III name/version against the European Commission before publish --></td></tr><tr><th scope="row"><a href="iscc-plus-certification">ISCC PLUS</a></th><td>Bio-based and recycled materials — plastics, chemicals, food, feed, circular economy</td><td>Non-energy markets</td><td>Mass-balance chain of custody</td></tr><tr><th scope="row"><a href="iscc-corsia-certification">ISCC CORSIA</a></th><td>Sustainable Aviation Fuel (SAF) and its feedstocks</td><td>Aviation</td><td>ICAO CORSIA programme <!-- VERIFY: CORSIA scope against ICAO before publish --></td></tr><tr><th scope="row">ISCC Carbon Footprint</th><td>Product carbon footprints</td><td>—</td><td>— <!-- TODO: HUMAN — market/basis for ISCC CF not stated in article; source before filling --></td></tr></tbody></table></div><h2>ISCC EU — for the EU energy market</h2><p>ISCC EU is a European Commission-recognised voluntary scheme for demonstrating compliance with the EU Renewable Energy Directive (RED III). If you produce biofuels, bioliquids or biomass fuels and want them counted toward EU renewable-energy targets, ISCC EU is the practical route to prove the sustainability and greenhouse-gas-saving criteria are met. It is fundamentally about market access to the EU energy sector.</p><h2>ISCC PLUS — for everything that is not energy</h2><p>ISCC PLUS is the voluntary scheme for non-energy markets: bio-based and recycled plastics, chemicals, food, feed, and circular-economy materials. It uses a mass-balance chain of custody, which lets certified sustainable or recycled material be mixed with conventional material and the certified attribute allocated to a defined share of output, with auditable bookkeeping. ISCC PLUS is what most chemicals, plastics and consumer-goods buyers mean when they ask for certified recycled or bio-based content.</p><h2>ISCC CORSIA — for aviation</h2><p>ISCC CORSIA is approved under ICAO's CORSIA programme and certifies Sustainable Aviation Fuel (SAF) and its feedstocks against the scheme's sustainability requirements. If your product is destined for the aviation fuel value chain, this is the relevant scheme.</p><h2>ISCC Carbon Footprint Certification — the add-on</h2><p>ISCC also offers Carbon Footprint Certification: an audit-verified product carbon footprint built to ISCC's methodology and recognised within ISCC supply chains. It complements rather than replaces an ISO 14067 product carbon footprint, and is best built on the same underlying data.</p><h2>How mass balance works</h2><p>Mass balance is the mechanism that makes circular and bio-based supply chains commercially workable. You can blend certified and conventional inputs in the same process, then allocate the certified attribute to a portion of the output — provided the bookkeeping proves you never claim more than you put in. Getting that bookkeeping right is where most first audits fail.</p><h2>Which do you need?</h2><ul><li>Biofuel or feedstock for the EU energy market → ISCC EU.</li><li>Bio-based or recycled plastics, chemicals, food or feed → ISCC PLUS.</li><li>Sustainable aviation fuel → ISCC CORSIA.</li><li>An audit-verified product carbon footprint within ISCC chains → ISCC Carbon Footprint Certification.</li><li>Many businesses need more than one — map the combination to your products and buyers before scoping the audit.</li></ul>
-          <div class="article-refs">
-            <h2>Sources &amp; further reading</h2>
-            <ol><li><a href="https://www.iscc-system.org/" target="_blank" rel="noopener">ISCC — International Sustainability and Carbon Certification (official site)</a></li><li><a href="https://energy.ec.europa.eu/topics/renewable-energy/bioenergy/voluntary-schemes_en" target="_blank" rel="noopener">European Commission — Voluntary schemes under the Renewable Energy Directive</a></li><li><a href="https://www.icao.int/environmental-protection/CORSIA/Pages/default.aspx" target="_blank" rel="noopener">ICAO — CORSIA Sustainability Certification Schemes</a></li></ol>
-          </div>
-          <p class="article-disclaimer">This article is general information, not legal, financial or compliance advice. The regulations and standards referenced here evolve; verify the current position with the issuing body, or ask us. Published June 2026.</p>
-        </div>
-      </div>
-    </article>
-    <section class="bg-paper-2">
-      <div class="container">
-        <div class="section-head" data-reveal><span class="eyebrow">More insights</span></div>
-        <div class="grid-3"><a class="insight" href="cbam-definitive-period-2026" data-reveal>
-      <div class="insight__media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 3l7 7-4 4-7-7zM10 7l-7 7 4 4 7-7M3 21h18" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="insight__tag">Regulation</span></div>
-      <div class="insight__body">
-        <div class="insight__meta">June 2026 · 9 min read</div>
-        <h3>CBAM in 2026: the definitive period, the Omnibus simplification, and what exporters must do now</h3>
-        <p>From 1 January 2026 the EU Carbon Border Adjustment Mechanism stops being a reporting exercise and becomes a cost. Here is what changed, who is now exempt, and the moves that protect your margin.</p>
-        <span class="link-arrow">Read insight <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </div>
-    </a><a class="insight" href="sbti-net-zero-standard-v2" data-reveal>
-      <div class="insight__media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 17l6-6 4 4 8-8M14 7h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="insight__tag">Net Zero</span></div>
-      <div class="insight__body">
-        <div class="insight__meta">June 2026 · 10 min read</div>
-        <h3>SBTi's Corporate Net-Zero Standard V2: what the draft changes — and how to prepare</h3>
-        <p>In 2025 the Science Based Targets initiative opened a draft of Version 2 of its Corporate Net-Zero Standard for consultation. It is not final — but the direction is clear, and target-setting companies should prepare now.</p>
-        <span class="link-arrow">Read insight <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </div>
-    </a><a class="insight" href="cdp-disclosure-2026" data-reveal>
-      <div class="insight__media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M16 8l-2 6-6 2 2-6z" stroke-linejoin="round"/></svg><span class="insight__tag">Disclosure</span></div>
-      <div class="insight__body">
-        <div class="insight__meta">June 2026 · 8 min read</div>
-        <h3>CDP after the overhaul: one questionnaire, IFRS-aligned, and how to score well</h3>
-        <p>CDP consolidated its separate questionnaires into a single, IFRS-aligned disclosure on a new platform. Here is how the system now works, how scoring is decided, and what actually moves your grade.</p>
-        <span class="link-arrow">Read insight <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      </div>
-    </a></div>
-      </div>
-    </section>
-    
-  <section class="bg-teal cta-band">
-    <h2 data-reveal>Want this analysed for <em>your</em> situation?</h2>
-    <p data-reveal data-delay="1">A senior advisor will respond within one business day. Confidential, no obligation.</p>
-    <div class="cta-band__actions" data-reveal data-delay="2">
-      <a class="btn btn--light" href="contact">Book a Consultation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a class="btn btn--outline-light" href="services">Explore Services</a>
-    </div>
-  </section></main>
+{% endraw %}
+{{ content | safe }}
+{% raw %}
 
 <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Privacy notice">
   <p>We respect your privacy. This site uses <strong>no tracking or advertising cookies</strong> — only essential storage to remember this notice. See our <a href="cookies">Cookie Policy</a>.</p>
@@ -992,3 +941,4 @@ if (form) {
 
 </body>
 </html>
+{% endraw %}
