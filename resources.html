@@ -693,6 +693,32 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
 }
 
 </style>
+<!-- Cookieless analytics (Phase G) — no cookies, no consent banner. Set ANALYTICS.domain to your real domain to activate (Plausible shown; Fathom/Umami: swap src + API). -->
+<script>
+(function(){
+  var ANALYTICS={provider:"plausible",domain:"TODO-set-your-domain",src:"https://plausible.io/js/script.tagged-events.js"};
+  window.oeTrack=function(name,props){try{if(window.plausible)window.plausible(name,props?{props:props}:undefined);}catch(e){}};
+  if(ANALYTICS.domain&&ANALYTICS.domain.indexOf("TODO")===-1){
+    var s=document.createElement("script");s.defer=true;s.setAttribute("data-domain",ANALYTICS.domain);s.src=ANALYTICS.src;document.head.appendChild(s);
+  }
+  document.addEventListener("DOMContentLoaded",function(){
+    var marks={25:0,50:0,75:0,100:0};
+    window.addEventListener("scroll",function(){
+      var h=document.body.scrollHeight-window.innerHeight;if(h<=0)return;
+      var pct=Math.round((window.scrollY/h)*100);
+      [25,50,75,100].forEach(function(m){if(pct>=m&&!marks[m]){marks[m]=1;window.oeTrack("Scroll Depth",{depth:m});}});
+    },{passive:true});
+    var f=document.getElementById("formFields");
+    if(f){var started=false;
+      f.addEventListener("input",function(){if(!started){started=true;window.oeTrack("Form Start");}});
+      f.addEventListener("submit",function(){window.oeTrack("Form Submit");});
+    }
+    document.querySelectorAll("[data-oe-event]").forEach(function(el){
+      el.addEventListener("click",function(){window.oeTrack(el.getAttribute("data-oe-event"));});
+    });
+  });
+})();
+</script>
 </head>
 
 <body>
@@ -705,7 +731,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
 <header class="nav" id="nav">
   <div class="container nav__inner">
     <a class="brand" href="./" aria-label="OffsetEase — home">
-      <img class="brand__img" src="offsetease-logo.png" alt="OffsetEase" width="454" height="252" />
+      <img class="brand__img" src="offsetease-logo.png" alt="OffsetEase" width="454" height="252" decoding="async" />
     </a>
 
     <nav class="nav__menu" aria-label="Primary">
@@ -882,7 +908,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
     <div class="footer__top">
       <div>
         <a class="brand footer__brand" href="./" aria-label="OffsetEase — home">
-          <img class="brand__img brand__img--light" src="offsetease-logo.png" alt="OffsetEase" width="454" height="252" />
+          <img class="brand__img brand__img--light" src="offsetease-logo.png" alt="OffsetEase" width="454" height="252" loading="lazy" decoding="async" />
         </a>
         <p style="margin-top:1rem">Strategy advisory across climate, carbon markets, climate finance, ESG and regulatory compliance for global enterprises.</p>
       </div>

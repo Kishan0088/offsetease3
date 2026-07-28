@@ -16,14 +16,14 @@
 <meta property="og:title" content="GHG Accounting &amp; Carbon Footprint Services | OffsetEase" />
 <meta property="og:description" content="Scope 1, 2 and 3 greenhouse gas accounting to the GHG Protocol and ISO 14064 — audit-ready inventories that auditors, customers and regulators accept." />
 <meta property="og:url" content="https://offsetease.com/ghg-accounting" />
-<meta property="og:image" content="https://offsetease.com/og-cover.png" />
+<meta property="og:image" content="https://offsetease.com/og/ghg-accounting.png" />
 <meta property="og:site_name" content="OffsetEase" />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="GHG Accounting &amp; Carbon Footprint Services | OffsetEase" />
 <meta name="twitter:description" content="Scope 1, 2 and 3 greenhouse gas accounting to the GHG Protocol and ISO 14064 — audit-ready inventories that auditors, customers and regulators accept." />
-<meta name="twitter:image" content="https://offsetease.com/og-cover.png" />
+<meta name="twitter:image" content="https://offsetease.com/og/ghg-accounting.png" />
 
 <link rel="canonical" href="https://offsetease.com/ghg-accounting" />
 
@@ -704,6 +704,32 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
 .rr-sectors a:hover{text-decoration:underline;}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://offsetease.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://offsetease.com/services"},{"@type":"ListItem","position":3,"name":"GHG Accounting & Carbon Footprint","item":"https://offsetease.com/ghg-accounting"}]},{"@type":"Service","name":"GHG Accounting & Carbon Footprint","serviceType":"GHG Accounting & Carbon Footprint","description":"GHG accounting is the measurement of an organisation's greenhouse-gas emissions across Scope 1 (direct operations), Scope 2 (purchased energy) and Scope 3 (the value chain), built to the GHG Protocol and ISO 14064. It is the data foundation every disclosure, rating, target and reduction plan stands on — and the first thing an auditor, customer or regulator will test.","url":"https://offsetease.com/ghg-accounting","provider":{"@type":"Organization","name":"OffsetEase","url":"https://offsetease.com"},"areaServed":"Global"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are Scope 1, 2 and 3 emissions?","acceptedAnswer":{"@type":"Answer","text":"Scope 1 covers direct emissions from operations you own or control (fuel, processes, vehicles). Scope 2 covers purchased electricity, steam, heating and cooling. Scope 3 covers everything else in your value chain — purchased goods, logistics, product use, end-of-life — and is typically 70–90% of the total."}},{"@type":"Question","name":"How long does a corporate carbon footprint take?","acceptedAnswer":{"@type":"Answer","text":"A first audit-ready inventory for a single-entity company typically takes 8–12 weeks. Multi-entity groups take longer, driven mostly by data collection. Repeat cycles are substantially faster once the system is in place."}},{"@type":"Question","name":"Do we need primary data from suppliers?","acceptedAnswer":{"@type":"Answer","text":"Not on day one. A credible first inventory uses spend- and average-based methods for most of Scope 3, then improves data quality on the categories that dominate the total. Assurance and customer scorecards progressively demand activity-level data on material categories."}},{"@type":"Question","name":"Which standard should we follow?","acceptedAnswer":{"@type":"Answer","text":"The GHG Protocol Corporate Standard is the global default and underpins CDP, SBTi, CSRD/ESRS, IFRS S2 and BRSR. ISO 14064-1 matters where formal verification is planned. We build to both so nothing needs re-doing."}},{"@type":"Question","name":"Can our footprint pass third-party assurance?","acceptedAnswer":{"@type":"Answer","text":"Yes — if boundaries, factors, calculations and evidence are documented as they are built. Retrofitting documentation after the fact is the most common and most expensive assurance failure."}}]}]}</script>
+<!-- Cookieless analytics (Phase G) — no cookies, no consent banner. Set ANALYTICS.domain to your real domain to activate (Plausible shown; Fathom/Umami: swap src + API). -->
+<script>
+(function(){
+  var ANALYTICS={provider:"plausible",domain:"TODO-set-your-domain",src:"https://plausible.io/js/script.tagged-events.js"};
+  window.oeTrack=function(name,props){try{if(window.plausible)window.plausible(name,props?{props:props}:undefined);}catch(e){}};
+  if(ANALYTICS.domain&&ANALYTICS.domain.indexOf("TODO")===-1){
+    var s=document.createElement("script");s.defer=true;s.setAttribute("data-domain",ANALYTICS.domain);s.src=ANALYTICS.src;document.head.appendChild(s);
+  }
+  document.addEventListener("DOMContentLoaded",function(){
+    var marks={25:0,50:0,75:0,100:0};
+    window.addEventListener("scroll",function(){
+      var h=document.body.scrollHeight-window.innerHeight;if(h<=0)return;
+      var pct=Math.round((window.scrollY/h)*100);
+      [25,50,75,100].forEach(function(m){if(pct>=m&&!marks[m]){marks[m]=1;window.oeTrack("Scroll Depth",{depth:m});}});
+    },{passive:true});
+    var f=document.getElementById("formFields");
+    if(f){var started=false;
+      f.addEventListener("input",function(){if(!started){started=true;window.oeTrack("Form Start");}});
+      f.addEventListener("submit",function(){window.oeTrack("Form Submit");});
+    }
+    document.querySelectorAll("[data-oe-event]").forEach(function(el){
+      el.addEventListener("click",function(){window.oeTrack(el.getAttribute("data-oe-event"));});
+    });
+  });
+})();
+</script>
 </head>
 
 <body>
@@ -716,7 +742,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
 <header class="nav" id="nav">
   <div class="container nav__inner">
     <a class="brand" href="./" aria-label="OffsetEase — home">
-      <img class="brand__img" src="offsetease-logo.png" alt="OffsetEase" width="454" height="252" />
+      <img class="brand__img" src="offsetease-logo.png" alt="OffsetEase" width="454" height="252" decoding="async" />
     </a>
 
     <nav class="nav__menu" aria-label="Primary">
@@ -953,7 +979,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
     </section>
 
     
-  <section class="related-reading"><div class="container"><h2>Related reading</h2><ul class="rr-list"><li><a href="scope-3-emissions-measurement">Scope 3 emissions: why they are most of your footprint, and how to measure them</a></li></ul></div></section><section class="bg-teal cta-band">
+  <section class="related-reading"><div class="container"><h2>Related reading</h2><ul class="rr-list"><li><a href="scope-3-emissions-measurement">Scope 3 emissions: why they are most of your footprint, and how to measure them</a></li></ul><p class="rr-sectors">Sectors we work with: <a href="metals">Metals &amp; Mining</a>, <a href="manufacturing">Manufacturing</a>, <a href="pharma">Pharmaceuticals</a>.</p></div></section><section class="bg-teal cta-band">
     <h2 data-reveal>Let's talk about your business — <em>before</em> we talk about sustainability.</h2>
     <p data-reveal data-delay="1">A senior advisor will respond within one business day. Confidential, no obligation.</p>
     <div class="cta-band__actions" data-reveal data-delay="2">
@@ -980,7 +1006,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
     <div class="footer__top">
       <div>
         <a class="brand footer__brand" href="./" aria-label="OffsetEase — home">
-          <img class="brand__img brand__img--light" src="offsetease-logo.png" alt="OffsetEase" width="454" height="252" />
+          <img class="brand__img brand__img--light" src="offsetease-logo.png" alt="OffsetEase" width="454" height="252" loading="lazy" decoding="async" />
         </a>
         <p style="margin-top:1rem">Strategy advisory across climate, carbon markets, climate finance, ESG and regulatory compliance for global enterprises.</p>
       </div>

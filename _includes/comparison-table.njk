@@ -1,0 +1,16 @@
+{# Reusable comparison table (Phase A2 / reused in Phase K).
+   Usage: {% from "comparison-table.njk" import cmpTable %}
+          {{ cmpTable("caption", ["Col1","Col2"], [["rowhdr","cell"], ...]) }}
+   First item of each row is the row header (<th scope="row">); the rest are <td>.
+   Cells may contain HTML. Renders semantic, responsive, screen-reader-friendly markup. #}
+{% macro cmpTable(caption, cols, rows) %}
+<div class="table-wrap" style="overflow-x:auto">
+  <table class="cmp-table">
+    <caption>{{ caption }}</caption>
+    <thead><tr>{% for c in cols %}<th scope="col">{{ c }}</th>{% endfor %}</tr></thead>
+    <tbody>
+    {% for r in rows %}<tr>{% for cell in r %}{% if loop.first %}<th scope="row">{{ cell | safe }}</th>{% else %}<td>{{ cell | safe }}</td>{% endif %}{% endfor %}</tr>{% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endmacro %}

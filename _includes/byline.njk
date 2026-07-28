@@ -1,0 +1,5 @@
+{# Reusable article byline (Phase B). Usage:
+   {% from "byline.njk" import byline %}{{ byline(authors.authors[key]) }} #}
+{% macro byline(a) %}
+<div class="article-byline">By <a href="/{{ a.leadershipAnchor }}">{{ a.name }}</a>{% if a.jobTitle %}, {{ a.jobTitle }}{% endif %}</div>
+{% endmacro %}

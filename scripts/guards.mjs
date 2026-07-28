@@ -53,6 +53,80 @@ if (!existsSync(join(SITE, "sitemap.xml"))) {
   if (bad.length) add("sitemap-html-url", bad.join(", "));
 }
 
+// ── Guard 5: a visible FAQ block must carry FAQPage schema (Phase C) ───────
+for (const f of htmlFiles) {
+  const html = read(f);
+  if (html.includes('class="acc__item"') && !/"@type"\s*:\s*"FAQPage"/.test(html)) {
+    add("faq-without-faqpage", f);
+  }
+}
+
+// ── Guard 6: BlogPosting must have author + datePublished (Phase C) ─────────
+for (const f of htmlFiles) {
+  const html = read(f);
+  for (const m of html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs)) {
+    const blk = m[1];
+    if (!blk.includes('"BlogPosting"')) continue;
+    if (!blk.includes('"author"')) add("article-without-author", f);
+    if (!blk.includes('"datePublished"')) add("article-without-datePublished", f);
+  }
+}
+
+// ── Guard 7: no broken internal links (Phase E) ────────────────────────────
+const has = (rel) => existsSync(join(SITE, rel)); // real path check (handles subdirs)
+const resolveHref = (href) => {
+  let h = href.split("#")[0].split("?")[0];
+  if (h === "" || h === "./" || h === "/") return "index.html";
+  if (h.startsWith("/")) h = h.slice(1);
+  if (h === "") return "index.html";
+  if (has(h)) return h;                 // asset or exact file (incl. subdirs)
+  if (has(h + ".html")) return h + ".html"; // extensionless page
+  return null;                          // unresolved
+};
+for (const f of htmlFiles) {
+  const html = read(f);
+  for (const m of html.matchAll(/href="([^"]+)"/g)) {
+    const href = m[1];
+    if (/^(https?:)?\/\//.test(href) || /^(mailto:|tel:|javascript:)/.test(href) || href.startsWith("#")) continue;
+    if (resolveHref(href) === null) add("broken-internal-link", `${f} → ${href}`);
+  }
+}
+
+// ── Guard 8: no orphan pages; max click-depth 3 from homepage (Phase J) ────
+// Build the internal link graph from every page, then BFS from index.html.
+const pageSet = new Set(htmlFiles);
+const edges = new Map(); // file -> Set(target files)
+const inbound = new Map(htmlFiles.map((f) => [f, 0]));
+for (const f of htmlFiles) {
+  const targets = new Set();
+  for (const m of read(f).matchAll(/href="([^"]+)"/g)) {
+    const t = resolveHref(m[1]);
+    if (t && t.endsWith(".html") && t !== f && pageSet.has(t)) targets.add(t);
+  }
+  edges.set(f, targets);
+  for (const t of targets) inbound.set(t, (inbound.get(t) || 0) + 1);
+}
+// Orphans: reachable content pages with zero inbound internal links (index exempt)
+for (const f of htmlFiles) {
+  if (f === "index.html") continue;
+  if ((inbound.get(f) || 0) === 0) add("orphan-page", f);
+}
+// Click depth via BFS from index.html
+const depth = new Map([["index.html", 0]]);
+let frontier = ["index.html"];
+while (frontier.length) {
+  const next = [];
+  for (const f of frontier) for (const t of edges.get(f) || []) {
+    if (!depth.has(t)) { depth.set(t, depth.get(f) + 1); next.push(t); }
+  }
+  frontier = next;
+}
+for (const f of htmlFiles) {
+  const d = depth.get(f);
+  if (d === undefined) add("unreachable-page", f);
+  else if (d > 3) add("click-depth>3", `${f} (depth ${d})`);
+}
+
 // ── Report ─────────────────────────────────────────────────────────────────
 if (violations.length === 0) {
   console.log(`✓ guards passed — ${htmlFiles.length} pages checked, 0 violations.`);

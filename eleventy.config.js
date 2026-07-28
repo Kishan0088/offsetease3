@@ -19,6 +19,8 @@ export default function (eleventyConfig) {
     "CNAME",
   ];
   for (const glob of passthrough) eleventyConfig.addPassthroughCopy(glob);
+  eleventyConfig.addPassthroughCopy("og");
+  eleventyConfig.addPassthroughCopy("downloads"); // gated lead-magnet assets (Phase G) // per-page OpenGraph images (Phase F)
 
   return {
     dir: {

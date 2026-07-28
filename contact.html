@@ -693,6 +693,32 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
 }
 
 </style>
+<!-- Cookieless analytics (Phase G) — no cookies, no consent banner. Set ANALYTICS.domain to your real domain to activate (Plausible shown; Fathom/Umami: swap src + API). -->
+<script>
+(function(){
+  var ANALYTICS={provider:"plausible",domain:"TODO-set-your-domain",src:"https://plausible.io/js/script.tagged-events.js"};
+  window.oeTrack=function(name,props){try{if(window.plausible)window.plausible(name,props?{props:props}:undefined);}catch(e){}};
+  if(ANALYTICS.domain&&ANALYTICS.domain.indexOf("TODO")===-1){
+    var s=document.createElement("script");s.defer=true;s.setAttribute("data-domain",ANALYTICS.domain);s.src=ANALYTICS.src;document.head.appendChild(s);
+  }
+  document.addEventListener("DOMContentLoaded",function(){
+    var marks={25:0,50:0,75:0,100:0};
+    window.addEventListener("scroll",function(){
+      var h=document.body.scrollHeight-window.innerHeight;if(h<=0)return;
+      var pct=Math.round((window.scrollY/h)*100);
+      [25,50,75,100].forEach(function(m){if(pct>=m&&!marks[m]){marks[m]=1;window.oeTrack("Scroll Depth",{depth:m});}});
+    },{passive:true});
+    var f=document.getElementById("formFields");
+    if(f){var started=false;
+      f.addEventListener("input",function(){if(!started){started=true;window.oeTrack("Form Start");}});
+      f.addEventListener("submit",function(){window.oeTrack("Form Submit");});
+    }
+    document.querySelectorAll("[data-oe-event]").forEach(function(el){
+      el.addEventListener("click",function(){window.oeTrack(el.getAttribute("data-oe-event"));});
+    });
+  });
+})();
+</script>
 </head>
 
 <body>
@@ -705,7 +731,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
 <header class="nav" id="nav">
   <div class="container nav__inner">
     <a class="brand" href="./" aria-label="OffsetEase — home">
-      <img class="brand__img" src="offsetease-logo.png" alt="OffsetEase" width="454" height="252" />
+      <img class="brand__img" src="offsetease-logo.png" alt="OffsetEase" width="454" height="252" decoding="async" />
     </a>
 
     <nav class="nav__menu" aria-label="Primary">
@@ -887,7 +913,24 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
           </div>
         </div>
       </div>
-    </section></main>
+    </section><section class="booking-section" id="book"><div class="container"><div class="prose-page">
+<h2>Prefer to book a time directly?</h2>
+<p>Pick a slot with a senior advisor — no back-and-forth needed. The form above works too.</p>
+<div id="cal-inline" style="min-height:80px"></div>
+<p id="cal-fallback"><a class="btn btn--primary" id="bookBtn" href="#book" data-oe-event="Booking Click">Book a consultation</a></p>
+<script>
+(function(){
+  var CAL={link:"TODO-your-cal.com-or-calendly-link"};// e.g. "offsetease/consultation" (Cal.com)
+  var inline=document.getElementById("cal-inline"),fb=document.getElementById("cal-fallback");
+  if(CAL.link&&CAL.link.indexOf("TODO")===-1){
+    (function(C,A,L){var p=function(a,ar){a.q.push(ar);};var d=C.document;C.Cal=C.Cal||function(){var cal=C.Cal,ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A;cal.loaded=true;}if(ar[0]===L){var api=function(){p(api,arguments);};var ns=ar[1];api.q=api.q||[];typeof ns==="string"?(cal.ns[ns]=api)&&p(api,ar):p(cal,ar);return;}p(cal,ar);};})(window,"https://app.cal.com/embed/embed.js","init");
+    Cal("init",{origin:"https://cal.com"});Cal("inline",{elementOrSelector:"#cal-inline",calLink:CAL.link});
+    fb.style.display="none";
+  }else{inline.style.display="none";}
+})();
+</script>
+</div></div></section>
+</main>
 
 <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Privacy notice">
   <p>We respect your privacy. This site uses <strong>no tracking or advertising cookies</strong> — only essential storage to remember this notice. See our <a href="cookies">Cookie Policy</a>.</p>
@@ -907,7 +950,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
     <div class="footer__top">
       <div>
         <a class="brand footer__brand" href="./" aria-label="OffsetEase — home">
-          <img class="brand__img brand__img--light" src="offsetease-logo.png" alt="OffsetEase" width="454" height="252" />
+          <img class="brand__img brand__img--light" src="offsetease-logo.png" alt="OffsetEase" width="454" height="252" loading="lazy" decoding="async" />
         </a>
         <p style="margin-top:1rem">Strategy advisory across climate, carbon markets, climate finance, ESG and regulatory compliance for global enterprises.</p>
       </div>

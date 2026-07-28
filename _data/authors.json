@@ -1,15 +1,16 @@
 {
-  "_comment": "SEO PHASE 3e/3g — fill in real people, then tell Claude Code to apply. Do NOT invent names. Each article's BlogPosting.author and the /leadership Person schema are generated from this file. 'slug' becomes the /leadership#slug anchor.",
-  "authors": [
-    {
-      "slug": "TODO-author-1",
+  "_comment": "Phase B author system. Fill real people (NEVER invent names/titles/credentials), then run `node scripts/apply-authors.mjs` to wire named bylines + Person schema across the 13 articles and /leadership. 'leadershipAnchor' must match an anchor id on /leadership.",
+  "authors": {
+    "TODO-author-1": {
       "name": "TODO: Full Name",
-      "jobTitle": "TODO: e.g. Partner, Carbon Markets",
-      "credentials": "TODO: e.g. GHG Protocol lead verifier; 12 yrs ISCC audits",
-      "knowsAbout": ["TODO: ISCC", "TODO: CBAM"],
-      "linkedin": "TODO: https://www.linkedin.com/in/..."
+      "jobTitle": "TODO: e.g. Lead Verifier, ISO 14064",
+      "credentials": ["TODO"],
+      "bio": "TODO: 1–2 sentences",
+      "photo": "/authors/TODO.jpg",
+      "linkedin": "TODO: https://www.linkedin.com/in/...",
+      "leadershipAnchor": "leadership#TODO"
     }
-  ],
+  },
   "article_bylines": {
     "iscc-eu-plus-corsia-which-certification": "TODO-author-1",
     "cbam-definitive-period-2026": "TODO-author-1",
