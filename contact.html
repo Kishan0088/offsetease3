@@ -153,7 +153,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
 .case-callout p,.content-section .case-callout p{margin:0;font-size:.95rem;opacity:.92;max-width:56ch;color:var(--paper);}
 @media (max-width:720px){.case-callout{grid-template-columns:1fr;}}
 
-.mobile-menu{position:fixed;inset:0 0 0 auto;width:min(360px,88vw);background:var(--paper);z-index:60;transform:translateX(100%);transition:transform .35s var(--ease);padding:5rem 1.75rem 2rem;display:flex;flex-direction:column;gap:.2rem;overflow-y:auto;border-left:1px solid var(--line);}
+.mobile-menu{position:fixed;inset:0 0 0 auto;width:min(360px,88vw);background:var(--paper);z-index:100;transform:translateX(100%);transition:transform .35s var(--ease);padding:5rem 1.75rem 2rem;display:flex;flex-direction:column;gap:.2rem;overflow-y:auto;border-left:1px solid var(--line);}
 .mobile-menu.is-open{transform:translateX(0);}
 .mobile-menu a{padding:.85rem 0;font-size:1rem;font-weight:500;color:var(--ink);border-bottom:1px solid var(--line);cursor:pointer;}
 .mobile-menu a:last-of-type{border-bottom:none;}
@@ -161,7 +161,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
 .mobile-menu .mm-group-label{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);padding:.5rem 0;border:none;}
 .mobile-menu .btn{margin-top:1rem;justify-content:center;}
 .mobile-menu__close{position:absolute;top:1.25rem;right:1.25rem;width:40px;height:40px;display:flex;align-items:center;justify-content:center;color:var(--ink);}
-.scrim{position:fixed;inset:0;background:rgba(26,26,26,.45);z-index:55;opacity:0;visibility:hidden;transition:.3s;}
+.scrim{position:fixed;inset:0;background:rgba(26,26,26,.45);z-index:95;opacity:0;visibility:hidden;transition:.3s;}
 .scrim.is-open{opacity:1;visibility:visible;}
 
 /* Page transitions */
@@ -926,7 +926,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
     (function(C,A,L){var p=function(a,ar){a.q.push(ar);};var d=C.document;C.Cal=C.Cal||function(){var cal=C.Cal,ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A;cal.loaded=true;}if(ar[0]===L){var api=function(){p(api,arguments);};var ns=ar[1];api.q=api.q||[];typeof ns==="string"?(cal.ns[ns]=api)&&p(api,ar):p(cal,ar);return;}p(cal,ar);};})(window,"https://app.cal.com/embed/embed.js","init");
     Cal("init",{origin:"https://cal.com"});Cal("inline",{elementOrSelector:"#cal-inline",calLink:CAL.link});
     fb.style.display="none";
-  }else{inline.style.display="none";}
+  }else{inline.style.display="none";var b=document.getElementById("bookBtn");b.setAttribute("href","#formFields");b.textContent="Use the form above";}
 })();
 </script>
 </div></div></section>
