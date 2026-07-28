@@ -92,6 +92,41 @@ for (const f of htmlFiles) {
   }
 }
 
+// ── Guard 8: no orphan pages; max click-depth 3 from homepage (Phase J) ────
+// Build the internal link graph from every page, then BFS from index.html.
+const pageSet = new Set(htmlFiles);
+const edges = new Map(); // file -> Set(target files)
+const inbound = new Map(htmlFiles.map((f) => [f, 0]));
+for (const f of htmlFiles) {
+  const targets = new Set();
+  for (const m of read(f).matchAll(/href="([^"]+)"/g)) {
+    const t = resolveHref(m[1]);
+    if (t && t.endsWith(".html") && t !== f && pageSet.has(t)) targets.add(t);
+  }
+  edges.set(f, targets);
+  for (const t of targets) inbound.set(t, (inbound.get(t) || 0) + 1);
+}
+// Orphans: reachable content pages with zero inbound internal links (index exempt)
+for (const f of htmlFiles) {
+  if (f === "index.html") continue;
+  if ((inbound.get(f) || 0) === 0) add("orphan-page", f);
+}
+// Click depth via BFS from index.html
+const depth = new Map([["index.html", 0]]);
+let frontier = ["index.html"];
+while (frontier.length) {
+  const next = [];
+  for (const f of frontier) for (const t of edges.get(f) || []) {
+    if (!depth.has(t)) { depth.set(t, depth.get(f) + 1); next.push(t); }
+  }
+  frontier = next;
+}
+for (const f of htmlFiles) {
+  const d = depth.get(f);
+  if (d === undefined) add("unreachable-page", f);
+  else if (d > 3) add("click-depth>3", `${f} (depth ${d})`);
+}
+
 // ── Report ─────────────────────────────────────────────────────────────────
 if (violations.length === 0) {
   console.log(`✓ guards passed — ${htmlFiles.length} pages checked, 0 violations.`);
