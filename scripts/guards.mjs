@@ -73,16 +73,15 @@ for (const f of htmlFiles) {
 }
 
 // ── Guard 7: no broken internal links (Phase E) ────────────────────────────
-const exists = new Set(readdirSync(SITE));
-// also allow assets in subdirs (none today, but future-proof)
+const has = (rel) => existsSync(join(SITE, rel)); // real path check (handles subdirs)
 const resolveHref = (href) => {
   let h = href.split("#")[0].split("?")[0];
   if (h === "" || h === "./" || h === "/") return "index.html";
   if (h.startsWith("/")) h = h.slice(1);
   if (h === "") return "index.html";
-  if (exists.has(h)) return h;                 // asset or exact file
-  if (exists.has(h + ".html")) return h + ".html"; // extensionless page
-  return null;                                  // unresolved
+  if (has(h)) return h;                 // asset or exact file (incl. subdirs)
+  if (has(h + ".html")) return h + ".html"; // extensionless page
+  return null;                          // unresolved
 };
 for (const f of htmlFiles) {
   const html = read(f);

@@ -694,6 +694,32 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
 
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://offsetease.com/"},{"@type":"ListItem","position":2,"name":"Insights","item":"https://offsetease.com/insights"},{"@type":"ListItem","position":3,"name":"Scope 3 emissions: why they are most of your footprint and how to actually measure them","item":"https://offsetease.com/scope-3-emissions-measurement"}]},{"@type":"BlogPosting","headline":"Scope 3 emissions: why they are most of your footprint and how to actually measure them","description":"Scope 3 is typically 70–90% of your footprint and the hardest to measure. The 15 categories, the methods that work, and where to start.","url":"https://offsetease.com/scope-3-emissions-measurement","datePublished":"2026-06-01","dateModified":"2026-07-28","author":{"@type":"Organization","name":"OffsetEase"},"publisher":{"@type":"Organization","name":"OffsetEase","url":"https://offsetease.com","logo":{"@type":"ImageObject","url":"https://offsetease.com/og-cover.png"}},"articleSection":"Carbon Accounting","inLanguage":"en"}]}</script>
+<!-- Cookieless analytics (Phase G) — no cookies, no consent banner. Set ANALYTICS.domain to your real domain to activate (Plausible shown; Fathom/Umami: swap src + API). -->
+<script>
+(function(){
+  var ANALYTICS={provider:"plausible",domain:"TODO-set-your-domain",src:"https://plausible.io/js/script.tagged-events.js"};
+  window.oeTrack=function(name,props){try{if(window.plausible)window.plausible(name,props?{props:props}:undefined);}catch(e){}};
+  if(ANALYTICS.domain&&ANALYTICS.domain.indexOf("TODO")===-1){
+    var s=document.createElement("script");s.defer=true;s.setAttribute("data-domain",ANALYTICS.domain);s.src=ANALYTICS.src;document.head.appendChild(s);
+  }
+  document.addEventListener("DOMContentLoaded",function(){
+    var marks={25:0,50:0,75:0,100:0};
+    window.addEventListener("scroll",function(){
+      var h=document.body.scrollHeight-window.innerHeight;if(h<=0)return;
+      var pct=Math.round((window.scrollY/h)*100);
+      [25,50,75,100].forEach(function(m){if(pct>=m&&!marks[m]){marks[m]=1;window.oeTrack("Scroll Depth",{depth:m});}});
+    },{passive:true});
+    var f=document.getElementById("formFields");
+    if(f){var started=false;
+      f.addEventListener("input",function(){if(!started){started=true;window.oeTrack("Form Start");}});
+      f.addEventListener("submit",function(){window.oeTrack("Form Submit");});
+    }
+    document.querySelectorAll("[data-oe-event]").forEach(function(el){
+      el.addEventListener("click",function(){window.oeTrack(el.getAttribute("data-oe-event"));});
+    });
+  });
+})();
+</script>
 </head>
 
 <body>

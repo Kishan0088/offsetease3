@@ -704,6 +704,32 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
 .rr-sectors a:hover{text-decoration:underline;}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://offsetease.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://offsetease.com/services"},{"@type":"ListItem","position":3,"name":"Climate Risk & TCFD / IFRS S2","item":"https://offsetease.com/climate-risk"}]},{"@type":"Service","name":"Climate Risk & TCFD / IFRS S2","serviceType":"Climate Risk & TCFD / IFRS S2","description":"Climate risk assessment quantifies how physical climate hazards (flood, heat, water stress, storms) and the low-carbon transition (carbon prices, regulation, demand shifts) affect your assets, supply chain and financial position — using scenario analysis aligned to TCFD and IFRS S2. Regulators, lenders and insurers now treat climate risk as financial risk; the question is whether your own numbers are better than their assumptions.","url":"https://offsetease.com/climate-risk","provider":{"@type":"Organization","name":"OffsetEase","url":"https://offsetease.com"},"areaServed":"Global"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between physical and transition risk?","acceptedAnswer":{"@type":"Answer","text":"Physical risk is the direct impact of climate hazards — acute events like floods and storms, chronic shifts like heat and water stress — on assets and operations. Transition risk is the financial impact of the shift to a low-carbon economy: carbon prices, regulation, technology displacement and changing demand. Credible assessments quantify both."}},{"@type":"Question","name":"Which scenarios should we use?","acceptedAnswer":{"@type":"Answer","text":"Disclosure standards expect multiple scenarios including a 1.5–2°C pathway and a higher-warming case, drawn from recognised sources such as NGFS and IPCC-aligned datasets. The discipline is less about scenario choice than about applying them consistently to your actual assets and value chain."}},{"@type":"Question","name":"Is scenario analysis mandatory?","acceptedAnswer":{"@type":"Answer","text":"IFRS S2 requires disclosure of climate resilience assessed using scenario analysis, and regulators in major markets are hardening expectations — for financial institutions it is increasingly supervisory. Doing it once, properly, is cheaper than improvising under a disclosure deadline."}},{"@type":"Question","name":"How quantified does climate risk disclosure need to be?","acceptedAnswer":{"@type":"Answer","text":"Direction of travel is unambiguous: from qualitative heatmaps toward financial quantification. Lenders and insurers already price your exposure with their own models — quantifying it yourself is the only way to negotiate with better numbers."}},{"@type":"Question","name":"How does climate risk link to our ERM?","acceptedAnswer":{"@type":"Answer","text":"Climate risks enter the same registers, appetites and controls as other enterprise risks — with longer horizons and scenario-based likelihoods. Integration into ERM is precisely what IFRS S2 and supervisors look for, and what stops climate risk being an annexe nobody owns."}}]}]}</script>
+<!-- Cookieless analytics (Phase G) — no cookies, no consent banner. Set ANALYTICS.domain to your real domain to activate (Plausible shown; Fathom/Umami: swap src + API). -->
+<script>
+(function(){
+  var ANALYTICS={provider:"plausible",domain:"TODO-set-your-domain",src:"https://plausible.io/js/script.tagged-events.js"};
+  window.oeTrack=function(name,props){try{if(window.plausible)window.plausible(name,props?{props:props}:undefined);}catch(e){}};
+  if(ANALYTICS.domain&&ANALYTICS.domain.indexOf("TODO")===-1){
+    var s=document.createElement("script");s.defer=true;s.setAttribute("data-domain",ANALYTICS.domain);s.src=ANALYTICS.src;document.head.appendChild(s);
+  }
+  document.addEventListener("DOMContentLoaded",function(){
+    var marks={25:0,50:0,75:0,100:0};
+    window.addEventListener("scroll",function(){
+      var h=document.body.scrollHeight-window.innerHeight;if(h<=0)return;
+      var pct=Math.round((window.scrollY/h)*100);
+      [25,50,75,100].forEach(function(m){if(pct>=m&&!marks[m]){marks[m]=1;window.oeTrack("Scroll Depth",{depth:m});}});
+    },{passive:true});
+    var f=document.getElementById("formFields");
+    if(f){var started=false;
+      f.addEventListener("input",function(){if(!started){started=true;window.oeTrack("Form Start");}});
+      f.addEventListener("submit",function(){window.oeTrack("Form Submit");});
+    }
+    document.querySelectorAll("[data-oe-event]").forEach(function(el){
+      el.addEventListener("click",function(){window.oeTrack(el.getAttribute("data-oe-event"));});
+    });
+  });
+})();
+</script>
 </head>
 
 <body>

@@ -704,6 +704,32 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
 .rr-sectors a:hover{text-decoration:underline;}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://offsetease.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://offsetease.com/services"},{"@type":"ListItem","position":3,"name":"GHG Accounting & Carbon Footprint","item":"https://offsetease.com/ghg-accounting"}]},{"@type":"Service","name":"GHG Accounting & Carbon Footprint","serviceType":"GHG Accounting & Carbon Footprint","description":"GHG accounting is the measurement of an organisation's greenhouse-gas emissions across Scope 1 (direct operations), Scope 2 (purchased energy) and Scope 3 (the value chain), built to the GHG Protocol and ISO 14064. It is the data foundation every disclosure, rating, target and reduction plan stands on — and the first thing an auditor, customer or regulator will test.","url":"https://offsetease.com/ghg-accounting","provider":{"@type":"Organization","name":"OffsetEase","url":"https://offsetease.com"},"areaServed":"Global"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What are Scope 1, 2 and 3 emissions?","acceptedAnswer":{"@type":"Answer","text":"Scope 1 covers direct emissions from operations you own or control (fuel, processes, vehicles). Scope 2 covers purchased electricity, steam, heating and cooling. Scope 3 covers everything else in your value chain — purchased goods, logistics, product use, end-of-life — and is typically 70–90% of the total."}},{"@type":"Question","name":"How long does a corporate carbon footprint take?","acceptedAnswer":{"@type":"Answer","text":"A first audit-ready inventory for a single-entity company typically takes 8–12 weeks. Multi-entity groups take longer, driven mostly by data collection. Repeat cycles are substantially faster once the system is in place."}},{"@type":"Question","name":"Do we need primary data from suppliers?","acceptedAnswer":{"@type":"Answer","text":"Not on day one. A credible first inventory uses spend- and average-based methods for most of Scope 3, then improves data quality on the categories that dominate the total. Assurance and customer scorecards progressively demand activity-level data on material categories."}},{"@type":"Question","name":"Which standard should we follow?","acceptedAnswer":{"@type":"Answer","text":"The GHG Protocol Corporate Standard is the global default and underpins CDP, SBTi, CSRD/ESRS, IFRS S2 and BRSR. ISO 14064-1 matters where formal verification is planned. We build to both so nothing needs re-doing."}},{"@type":"Question","name":"Can our footprint pass third-party assurance?","acceptedAnswer":{"@type":"Answer","text":"Yes — if boundaries, factors, calculations and evidence are documented as they are built. Retrofitting documentation after the fact is the most common and most expensive assurance failure."}}]}]}</script>
+<!-- Cookieless analytics (Phase G) — no cookies, no consent banner. Set ANALYTICS.domain to your real domain to activate (Plausible shown; Fathom/Umami: swap src + API). -->
+<script>
+(function(){
+  var ANALYTICS={provider:"plausible",domain:"TODO-set-your-domain",src:"https://plausible.io/js/script.tagged-events.js"};
+  window.oeTrack=function(name,props){try{if(window.plausible)window.plausible(name,props?{props:props}:undefined);}catch(e){}};
+  if(ANALYTICS.domain&&ANALYTICS.domain.indexOf("TODO")===-1){
+    var s=document.createElement("script");s.defer=true;s.setAttribute("data-domain",ANALYTICS.domain);s.src=ANALYTICS.src;document.head.appendChild(s);
+  }
+  document.addEventListener("DOMContentLoaded",function(){
+    var marks={25:0,50:0,75:0,100:0};
+    window.addEventListener("scroll",function(){
+      var h=document.body.scrollHeight-window.innerHeight;if(h<=0)return;
+      var pct=Math.round((window.scrollY/h)*100);
+      [25,50,75,100].forEach(function(m){if(pct>=m&&!marks[m]){marks[m]=1;window.oeTrack("Scroll Depth",{depth:m});}});
+    },{passive:true});
+    var f=document.getElementById("formFields");
+    if(f){var started=false;
+      f.addEventListener("input",function(){if(!started){started=true;window.oeTrack("Form Start");}});
+      f.addEventListener("submit",function(){window.oeTrack("Form Submit");});
+    }
+    document.querySelectorAll("[data-oe-event]").forEach(function(el){
+      el.addEventListener("click",function(){window.oeTrack(el.getAttribute("data-oe-event"));});
+    });
+  });
+})();
+</script>
 </head>
 
 <body>

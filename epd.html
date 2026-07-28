@@ -704,6 +704,32 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
 .rr-sectors a:hover{text-decoration:underline;}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://offsetease.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://offsetease.com/services"},{"@type":"ListItem","position":3,"name":"Environmental Product Declaration (EPD)","item":"https://offsetease.com/epd"}]},{"@type":"Service","name":"Environmental Product Declaration (EPD)","serviceType":"Environmental Product Declaration (EPD)","description":"An Environmental Product Declaration (EPD) is a third-party-verified, registered document reporting a product's environmental impacts, based on an LCA conducted to the relevant Product Category Rules under ISO 14025 — and, for construction products, EN 15804. Green-building schemes, public procurement and major specifiers increasingly require EPDs as a condition of consideration.","url":"https://offsetease.com/epd","provider":{"@type":"Organization","name":"OffsetEase","url":"https://offsetease.com"},"areaServed":"Global"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How long does an EPD take?","acceptedAnswer":{"@type":"Answer","text":"Typically 8–16 weeks from data availability to publication: LCA build, verification, then registration with the programme operator. Construction-product EPDs to EN 15804+A2 sit at the longer end."}},{"@type":"Question","name":"How long is an EPD valid?","acceptedAnswer":{"@type":"Answer","text":"Five years is standard across major programmes, with updates required earlier if the product or process changes materially. We design the underlying model so renewal is an update, not a rebuild."}},{"@type":"Question","name":"Do we need an EPD per SKU?","acceptedAnswer":{"@type":"Answer","text":"Usually not. Product Category Rules allow representative products and families with documented variation rules. Grouping strategy is the single biggest cost lever in an EPD programme."}},{"@type":"Question","name":"What does an EPD cost?","acceptedAnswer":{"@type":"Answer","text":"Cost is driven by LCA complexity, the number of declared products, verification and programme fees. A family-grouped programme costs a fraction of per-SKU declarations — which is why we start with portfolio strategy, not the first product."}},{"@type":"Question","name":"EPD vs PCF — what is the difference?","acceptedAnswer":{"@type":"Answer","text":"A PCF is a carbon-only figure, usually unverified, exchanged between businesses. An EPD is a multi-impact, third-party-verified, publicly registered declaration that specifiers and green-building schemes formally recognise. Tenders that say EPD mean EPD."}}]}]}</script>
+<!-- Cookieless analytics (Phase G) — no cookies, no consent banner. Set ANALYTICS.domain to your real domain to activate (Plausible shown; Fathom/Umami: swap src + API). -->
+<script>
+(function(){
+  var ANALYTICS={provider:"plausible",domain:"TODO-set-your-domain",src:"https://plausible.io/js/script.tagged-events.js"};
+  window.oeTrack=function(name,props){try{if(window.plausible)window.plausible(name,props?{props:props}:undefined);}catch(e){}};
+  if(ANALYTICS.domain&&ANALYTICS.domain.indexOf("TODO")===-1){
+    var s=document.createElement("script");s.defer=true;s.setAttribute("data-domain",ANALYTICS.domain);s.src=ANALYTICS.src;document.head.appendChild(s);
+  }
+  document.addEventListener("DOMContentLoaded",function(){
+    var marks={25:0,50:0,75:0,100:0};
+    window.addEventListener("scroll",function(){
+      var h=document.body.scrollHeight-window.innerHeight;if(h<=0)return;
+      var pct=Math.round((window.scrollY/h)*100);
+      [25,50,75,100].forEach(function(m){if(pct>=m&&!marks[m]){marks[m]=1;window.oeTrack("Scroll Depth",{depth:m});}});
+    },{passive:true});
+    var f=document.getElementById("formFields");
+    if(f){var started=false;
+      f.addEventListener("input",function(){if(!started){started=true;window.oeTrack("Form Start");}});
+      f.addEventListener("submit",function(){window.oeTrack("Form Submit");});
+    }
+    document.querySelectorAll("[data-oe-event]").forEach(function(el){
+      el.addEventListener("click",function(){window.oeTrack(el.getAttribute("data-oe-event"));});
+    });
+  });
+})();
+</script>
 </head>
 
 <body>

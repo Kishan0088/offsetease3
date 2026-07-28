@@ -704,6 +704,32 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
 .rr-sectors a:hover{text-decoration:underline;}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://offsetease.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://offsetease.com/services"},{"@type":"ListItem","position":3,"name":"Renewable Energy Procurement","item":"https://offsetease.com/renewable-energy"}]},{"@type":"Service","name":"Renewable Energy Procurement","serviceType":"Renewable Energy Procurement","description":"Renewable energy procurement reduces Scope 2 emissions through on-site generation, power purchase agreements (PPAs) and energy attribute certificates (RECs, I-RECs, GOs), accounted under GHG Protocol Scope 2 Guidance and benchmarked against RE100 criteria. Structured well, it cuts both emissions and energy cost; structured badly, it buys certificates that no longer survive scrutiny.","url":"https://offsetease.com/renewable-energy","provider":{"@type":"Organization","name":"OffsetEase","url":"https://offsetease.com"},"areaServed":"Global"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Should we buy RECs or sign a PPA?","acceptedAnswer":{"@type":"Answer","text":"They solve different problems. Unbundled certificates are fast and flexible but carry rising scrutiny and no energy-cost benefit. PPAs (on-site or offsite) deliver price certainty and a stronger additionality story at the cost of term commitment. Most credible strategies blend both, weighted by market and load."}},{"@type":"Question","name":"Are unbundled RECs still credible?","acceptedAnswer":{"@type":"Answer","text":"They still count under GHG Protocol market-based accounting, but expectations are tightening toward better geographic and temporal matching and demonstrable impact. RE100's criteria have already hardened. We treat unbundled certificates as a bridge, not a destination."}},{"@type":"Question","name":"Does renewable electricity count toward our SBTi target?","acceptedAnswer":{"@type":"Answer","text":"Yes — market-based Scope 2 accounting means credible renewable procurement directly reduces reported Scope 2, which is typically one of the fastest levers in any SBTi pathway. Quality of instruments determines whether those reductions survive assurance."}},{"@type":"Question","name":"What is 24/7 carbon-free energy matching?","acceptedAnswer":{"@type":"Answer","text":"Matching consumption with carbon-free generation every hour rather than annually — the emerging frontier beyond RE100-style annual matching, led by major buyers. Most companies need not start there, but new contracts should be structured so they remain compatible with it."}},{"@type":"Question","name":"Do on-site solar and PPAs actually save money?","acceptedAnswer":{"@type":"Answer","text":"Frequently, yes — in many markets renewable PPAs and on-site generation undercut grid tariffs and hedge price volatility. That is why we run procurement as an energy-cost project with a carbon benefit, not the other way round: the economics carry the decision through the board."}}]}]}</script>
+<!-- Cookieless analytics (Phase G) — no cookies, no consent banner. Set ANALYTICS.domain to your real domain to activate (Plausible shown; Fathom/Umami: swap src + API). -->
+<script>
+(function(){
+  var ANALYTICS={provider:"plausible",domain:"TODO-set-your-domain",src:"https://plausible.io/js/script.tagged-events.js"};
+  window.oeTrack=function(name,props){try{if(window.plausible)window.plausible(name,props?{props:props}:undefined);}catch(e){}};
+  if(ANALYTICS.domain&&ANALYTICS.domain.indexOf("TODO")===-1){
+    var s=document.createElement("script");s.defer=true;s.setAttribute("data-domain",ANALYTICS.domain);s.src=ANALYTICS.src;document.head.appendChild(s);
+  }
+  document.addEventListener("DOMContentLoaded",function(){
+    var marks={25:0,50:0,75:0,100:0};
+    window.addEventListener("scroll",function(){
+      var h=document.body.scrollHeight-window.innerHeight;if(h<=0)return;
+      var pct=Math.round((window.scrollY/h)*100);
+      [25,50,75,100].forEach(function(m){if(pct>=m&&!marks[m]){marks[m]=1;window.oeTrack("Scroll Depth",{depth:m});}});
+    },{passive:true});
+    var f=document.getElementById("formFields");
+    if(f){var started=false;
+      f.addEventListener("input",function(){if(!started){started=true;window.oeTrack("Form Start");}});
+      f.addEventListener("submit",function(){window.oeTrack("Form Submit");});
+    }
+    document.querySelectorAll("[data-oe-event]").forEach(function(el){
+      el.addEventListener("click",function(){window.oeTrack(el.getAttribute("data-oe-event"));});
+    });
+  });
+})();
+</script>
 </head>
 
 <body>

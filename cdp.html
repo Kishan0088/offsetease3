@@ -704,6 +704,32 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
 .rr-sectors a:hover{text-decoration:underline;}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://offsetease.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://offsetease.com/services"},{"@type":"ListItem","position":3,"name":"CDP Reporting & Score Improvement","item":"https://offsetease.com/cdp"}]},{"@type":"Service","name":"CDP Reporting & Score Improvement","serviceType":"CDP Reporting & Score Improvement","description":"CDP is the global disclosure system through which companies report climate (and water and forests) data, requested by investors and by customers through the CDP Supply Chain programme. Responses are scored from A to D- and the score is visible to the institutions that asked — making CDP simultaneously a disclosure, a rating and a customer-relationship document.","url":"https://offsetease.com/cdp","provider":{"@type":"Organization","name":"OffsetEase","url":"https://offsetease.com"},"areaServed":"Global"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is CDP scored?","acceptedAnswer":{"@type":"Answer","text":"Four ascending levels — Disclosure, Awareness, Management, Leadership — mapping to D through A. Points come from completeness, governance quality, risk processes, verified emissions data and credible targets. Leadership bands additionally require third-party verification and science-based targets."}},{"@type":"Question","name":"What score do our customers expect?","acceptedAnswer":{"@type":"Answer","text":"Most supply-chain programmes treat B / Management band as the credibility threshold; A-list suppliers get preferential treatment in some programmes. The practical target is the band your largest requesting customer benchmarks against — we establish that first."}},{"@type":"Question","name":"How does CDP relate to IFRS S2 and TCFD?","acceptedAnswer":{"@type":"Answer","text":"CDP's climate questionnaire is aligned to the TCFD structure that IFRS S2 absorbed — governance, strategy, risk management, metrics and targets. A well-built CDP response and an IFRS S2 disclosure draw on the same backbone, which is why we build the content once."}},{"@type":"Question","name":"Does an SBTi target improve our CDP score?","acceptedAnswer":{"@type":"Answer","text":"Materially. Validated science-based targets score directly in the targets module and unlock Leadership-level points unavailable otherwise. Verification of emissions data has a similar effect."}},{"@type":"Question","name":"When does CDP have to be submitted?","acceptedAnswer":{"@type":"Answer","text":"The questionnaire window runs annually, typically opening in spring with a mid-year deadline. Score-improving work — governance, verification, targets — has to be in place before the window opens, so the realistic project starts two to three quarters earlier."}}]}]}</script>
+<!-- Cookieless analytics (Phase G) — no cookies, no consent banner. Set ANALYTICS.domain to your real domain to activate (Plausible shown; Fathom/Umami: swap src + API). -->
+<script>
+(function(){
+  var ANALYTICS={provider:"plausible",domain:"TODO-set-your-domain",src:"https://plausible.io/js/script.tagged-events.js"};
+  window.oeTrack=function(name,props){try{if(window.plausible)window.plausible(name,props?{props:props}:undefined);}catch(e){}};
+  if(ANALYTICS.domain&&ANALYTICS.domain.indexOf("TODO")===-1){
+    var s=document.createElement("script");s.defer=true;s.setAttribute("data-domain",ANALYTICS.domain);s.src=ANALYTICS.src;document.head.appendChild(s);
+  }
+  document.addEventListener("DOMContentLoaded",function(){
+    var marks={25:0,50:0,75:0,100:0};
+    window.addEventListener("scroll",function(){
+      var h=document.body.scrollHeight-window.innerHeight;if(h<=0)return;
+      var pct=Math.round((window.scrollY/h)*100);
+      [25,50,75,100].forEach(function(m){if(pct>=m&&!marks[m]){marks[m]=1;window.oeTrack("Scroll Depth",{depth:m});}});
+    },{passive:true});
+    var f=document.getElementById("formFields");
+    if(f){var started=false;
+      f.addEventListener("input",function(){if(!started){started=true;window.oeTrack("Form Start");}});
+      f.addEventListener("submit",function(){window.oeTrack("Form Submit");});
+    }
+    document.querySelectorAll("[data-oe-event]").forEach(function(el){
+      el.addEventListener("click",function(){window.oeTrack(el.getAttribute("data-oe-event"));});
+    });
+  });
+})();
+</script>
 </head>
 
 <body>

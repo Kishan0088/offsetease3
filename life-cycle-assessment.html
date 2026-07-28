@@ -704,6 +704,32 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
 .rr-sectors a:hover{text-decoration:underline;}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://offsetease.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://offsetease.com/services"},{"@type":"ListItem","position":3,"name":"Life Cycle Assessment (LCA)","item":"https://offsetease.com/life-cycle-assessment"}]},{"@type":"Service","name":"Life Cycle Assessment (LCA)","serviceType":"Life Cycle Assessment (LCA)","description":"Life Cycle Assessment (LCA) is the ISO 14040/14044 method for quantifying a product's environmental impacts — climate, water, resource use, toxicity and more — across its full life from raw-material extraction to end of life. It is the evidence base behind credible product claims, EPDs, ecodesign decisions and anti-greenwashing defence.","url":"https://offsetease.com/life-cycle-assessment","provider":{"@type":"Organization","name":"OffsetEase","url":"https://offsetease.com"},"areaServed":"Global"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between a screening LCA and a full LCA?","acceptedAnswer":{"@type":"Answer","text":"A screening LCA uses secondary data and simplified boundaries to find hotspots and direct decisions — fast and inexpensive. A full ISO 14044 LCA with critical review is required for public comparative claims and EPDs. Most clients start with screening and deepen only where the business case demands."}},{"@type":"Question","name":"How long does an LCA take?","acceptedAnswer":{"@type":"Answer","text":"Screening studies complete in 4–8 weeks. Full critical-review LCAs typically take 4–6 months, with data collection — not modelling — as the bottleneck."}},{"@type":"Question","name":"Can we make comparative environmental claims?","acceptedAnswer":{"@type":"Answer","text":"Yes, with discipline. ISO 14044 requires a critical review by a panel for public comparative assertions, and anti-greenwashing rules increasingly require the underlying study to be disclosed. We structure both the LCA and the claim language to survive that review."}},{"@type":"Question","name":"Which LCA databases do you use?","acceptedAnswer":{"@type":"Answer","text":"Recognised commercial and regional databases (such as ecoinvent) selected per study, documented per dataset. Database choice and assumptions are always disclosed — it is the first thing a reviewer checks."}},{"@type":"Question","name":"LCA, PCF or EPD — which do we need?","acceptedAnswer":{"@type":"Answer","text":"LCA is the underlying multi-impact method. A PCF is the climate-only subset. An EPD is a third-party-verified, registered disclosure built on an LCA to category rules. The right starting point depends on who is asking — we map the demand before scoping the study."}}]}]}</script>
+<!-- Cookieless analytics (Phase G) — no cookies, no consent banner. Set ANALYTICS.domain to your real domain to activate (Plausible shown; Fathom/Umami: swap src + API). -->
+<script>
+(function(){
+  var ANALYTICS={provider:"plausible",domain:"TODO-set-your-domain",src:"https://plausible.io/js/script.tagged-events.js"};
+  window.oeTrack=function(name,props){try{if(window.plausible)window.plausible(name,props?{props:props}:undefined);}catch(e){}};
+  if(ANALYTICS.domain&&ANALYTICS.domain.indexOf("TODO")===-1){
+    var s=document.createElement("script");s.defer=true;s.setAttribute("data-domain",ANALYTICS.domain);s.src=ANALYTICS.src;document.head.appendChild(s);
+  }
+  document.addEventListener("DOMContentLoaded",function(){
+    var marks={25:0,50:0,75:0,100:0};
+    window.addEventListener("scroll",function(){
+      var h=document.body.scrollHeight-window.innerHeight;if(h<=0)return;
+      var pct=Math.round((window.scrollY/h)*100);
+      [25,50,75,100].forEach(function(m){if(pct>=m&&!marks[m]){marks[m]=1;window.oeTrack("Scroll Depth",{depth:m});}});
+    },{passive:true});
+    var f=document.getElementById("formFields");
+    if(f){var started=false;
+      f.addEventListener("input",function(){if(!started){started=true;window.oeTrack("Form Start");}});
+      f.addEventListener("submit",function(){window.oeTrack("Form Submit");});
+    }
+    document.querySelectorAll("[data-oe-event]").forEach(function(el){
+      el.addEventListener("click",function(){window.oeTrack(el.getAttribute("data-oe-event"));});
+    });
+  });
+})();
+</script>
 </head>
 
 <body>
