@@ -19,6 +19,7 @@ export default function (eleventyConfig) {
     "CNAME",
   ];
   for (const glob of passthrough) eleventyConfig.addPassthroughCopy(glob);
+  eleventyConfig.addPassthroughCopy("og"); // per-page OpenGraph images (Phase F)
 
   return {
     dir: {
