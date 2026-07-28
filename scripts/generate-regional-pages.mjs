@@ -56,13 +56,13 @@ for (const p of pages) {
 
   const content = `${jsonld}
 <main id="app">
-    ${subnav}
     <section class="page-header"><div class="container">
       <div class="crumbs"><a href="./">Home</a><span class="sep">/</span><a href="services">Services</a><span class="sep">/</span><a href="${p.service}">${p.serviceName}</a><span class="sep">/</span><span class="current">${p.country}</span></div>
       <span class="eyebrow">${p.eyebrow}</span>
       <h1 style="margin-top:1.25rem">${p.h1}</h1>
       <p class="page-header__lead">${p.serviceName} for ${p.country} producers and exporters — ${p.commodity} moving into EU-facing markets.</p>
     </div></section>
+    ${subnav}
     <section><div class="container split">
       <div class="content-section">
         <p style="font-size:var(--fs-lead);color:var(--ink-2);max-width:64ch">${p.country} is ${p.local}: its ${p.commodity} sector depends on ${p.flow}. That makes ${p.reg} <!-- VERIFY: scope, thresholds and application dates against the issuing body before publish --> a direct commercial issue for ${p.country} exporters.</p>

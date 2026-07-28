@@ -117,13 +117,13 @@ for (const s of schemes) {
 
   const content = `${jsonld}
 <main id="app">
-    ${subnav}
     <section class="page-header"><div class="container">
       <div class="crumbs"><a href="./">Home</a><span class="sep">/</span><a href="services">Services</a><span class="sep">/</span><a href="iscc">ISCC</a><span class="sep">/</span><span class="current">${s.short}</span></div>
       <span class="eyebrow">Comply</span>
       <h1 style="margin-top:1.25rem">${s.h1}</h1>
       <p class="page-header__lead">${s.lead}</p>
     </div></section>
+    ${subnav}
     <section><div class="container split">
       <div class="content-section">
         <p style="font-size:var(--fs-lead);color:var(--ink-2);max-width:64ch">${s.intro}</p>

@@ -913,24 +913,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
           </div>
         </div>
       </div>
-    </section><section class="booking-section" id="book"><div class="container"><div class="prose-page">
-<h2>Prefer to book a time directly?</h2>
-<p>Pick a slot with a senior advisor — no back-and-forth needed. The form above works too.</p>
-<div id="cal-inline" style="min-height:80px"></div>
-<p id="cal-fallback"><a class="btn btn--primary" id="bookBtn" href="#book" data-oe-event="Booking Click">Book a consultation</a></p>
-<script>
-(function(){
-  var CAL={link:"TODO-your-cal.com-or-calendly-link"};// e.g. "offsetease/consultation" (Cal.com)
-  var inline=document.getElementById("cal-inline"),fb=document.getElementById("cal-fallback");
-  if(CAL.link&&CAL.link.indexOf("TODO")===-1){
-    (function(C,A,L){var p=function(a,ar){a.q.push(ar);};var d=C.document;C.Cal=C.Cal||function(){var cal=C.Cal,ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A;cal.loaded=true;}if(ar[0]===L){var api=function(){p(api,arguments);};var ns=ar[1];api.q=api.q||[];typeof ns==="string"?(cal.ns[ns]=api)&&p(api,ar):p(cal,ar);return;}p(cal,ar);};})(window,"https://app.cal.com/embed/embed.js","init");
-    Cal("init",{origin:"https://cal.com"});Cal("inline",{elementOrSelector:"#cal-inline",calLink:CAL.link});
-    fb.style.display="none";
-  }else{inline.style.display="none";var b=document.getElementById("bookBtn");b.setAttribute("href","#formFields");b.textContent="Use the form above";}
-})();
-</script>
-</div></div></section>
-</main>
+    </section></main>
 
 <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Privacy notice">
   <p>We respect your privacy. This site uses <strong>no tracking or advertising cookies</strong> — only essential storage to remember this notice. See our <a href="cookies">Cookie Policy</a>.</p>
