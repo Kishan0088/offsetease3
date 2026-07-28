@@ -1,7 +1,10 @@
 # OffsetEase — Netlify config
-# Plain static site: files live at the repo root, no build step.
-# Redirects are defined in ./_redirects (the single source of truth), which
-# Netlify reads from the publish root. Cloudflare Pages reads the same file.
+# Eleventy build. Output goes to _site, which becomes the publish root.
+# Redirects live in ./_redirects and are passthrough-copied into _site/ by the
+# build (single source of truth); Cloudflare Pages would read the same file.
 [build]
-  publish = "."
-  command = ""
+  publish = "_site"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"

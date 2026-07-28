@@ -1,7 +1,20 @@
 # OffsetEase — repo conventions
 
-Flat static HTML site (no build system). Each page is a self-contained `.html`
-file at the repo root with its own inline `<style>` and JSON-LD.
+Static site built with **Eleventy**. The existing pages are self-contained `.html`
+files at the repo root (each with its own inline `<style>` and JSON-LD), copied
+through **byte-identically** by the build. New pages/components are added as `.njk`
+templates and existing pages are migrated into templates phase-by-phase.
+
+## Build & CI
+- `npm run build` → generates `_site/` (the Netlify publish dir). Existing `.html`,
+  images, `robots.txt`, `llms.txt`, `sitemap.xml`, `_redirects`, `CNAME` are
+  passthrough-copied verbatim; `.njk` templates are rendered.
+- `npm run guard` → runs `scripts/guards.mjs` regression checks against `_site`.
+- `npm run check` → build + guard (what CI runs).
+- CI: `.github/workflows/ci.yml` runs build + guards on every PR and on `main`.
+- **Never commit `_site/` or `node_modules/`** (gitignored). Netlify runs the build
+  (`netlify.toml`: publish `_site`, `NODE_VERSION=20`).
+- After changing any page, run `npm run check` before committing.
 
 ## SEO invariants (do not regress)
 - All page content must be present in server-rendered HTML. No client-side-only content.
