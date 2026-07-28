@@ -23,6 +23,11 @@ const pages = [
   { slug: "iscc-eu-certification", title: "ISCC EU Certification", label: "ISCC certification" },
   { slug: "iscc-plus-certification", title: "ISCC PLUS Certification", label: "ISCC certification" },
   { slug: "iscc-corsia-certification", title: "ISCC CORSIA Certification", label: "ISCC certification" },
+  { slug: "iscc-certification-malaysia", title: "ISCC Certification in Malaysia", label: "Region · SEA" },
+  { slug: "iscc-certification-indonesia", title: "ISCC Certification in Indonesia", label: "Region · SEA" },
+  { slug: "cbam-compliance-india", title: "CBAM Compliance for Indian Exporters", label: "Region · India" },
+  { slug: "eudr-compliance-vietnam", title: "EUDR Compliance for Vietnamese Exporters", label: "Region · SEA" },
+  { slug: "working-with-global-clients", title: "Working with OffsetEase from outside India", label: "How we work" },
   ...ARTICLES.map((s) => ({ slug: s, title: h1of(s), label: "Insight" })),
 ].filter((p) => p.title);
 

@@ -127,6 +127,41 @@ for (const f of htmlFiles) {
   else if (d > 3) add("click-depth>3", `${f} (depth ${d})`);
 }
 
+// ── Guard 9: no unverified regulatory claims on INDEXABLE pages (Phase P) ──
+// noindex scaffolds may carry <!-- VERIFY: ... --> markers; the moment a page is
+// indexable it must not — this stops unverified compliance claims from shipping.
+for (const f of htmlFiles) {
+  const html = read(f);
+  const noindex = /name="robots"\s+content="[^"]*noindex/i.test(html);
+  if (!noindex && /<!--\s*VERIFY/i.test(html)) add("verify-on-indexable-page", f);
+}
+
+// ── Guard 10: doorway-page similarity on industry/regional pages (Phase P) ──
+// Compares MAIN-CONTENT text (shell excluded) between templated pages; a pair
+// above the threshold signals swapped-noun doorway pages.
+const DOORWAY_SLUGS = htmlFiles.filter((f) =>
+  /^(pharma|textiles|manufacturing|metals|consumer|chemicals|automotive)\.html$/.test(f) ||
+  /-(malaysia|indonesia|india|vietnam|gcc|saudi-arabia|uae|brazil|west-africa|south-africa)\.html$/.test(f));
+const mainText = (f) => {
+  const m = read(f).match(/<main[\s\S]*?<\/main>/i);
+  return (m ? m[0] : "").replace(/<[^>]+>/g, " ").toLowerCase().replace(/[^a-z0-9 ]/g, " ").split(/\s+/).filter(Boolean);
+};
+const shingles = (words, n = 3) => {
+  const s = new Set();
+  for (let i = 0; i + n <= words.length; i++) s.add(words.slice(i, i + n).join(" "));
+  return s;
+};
+const texts = new Map(DOORWAY_SLUGS.map((f) => [f, shingles(mainText(f))]));
+for (let a = 0; a < DOORWAY_SLUGS.length; a++) {
+  for (let b = a + 1; b < DOORWAY_SLUGS.length; b++) {
+    const A = texts.get(DOORWAY_SLUGS[a]), B = texts.get(DOORWAY_SLUGS[b]);
+    if (!A.size || !B.size) continue;
+    let inter = 0; for (const x of A) if (B.has(x)) inter++;
+    const jaccard = inter / (A.size + B.size - inter);
+    if (jaccard > 0.85) add("doorway-similarity", `${DOORWAY_SLUGS[a]} ~ ${DOORWAY_SLUGS[b]} (${(jaccard * 100).toFixed(0)}%)`);
+  }
+}
+
 // ── Report ─────────────────────────────────────────────────────────────────
 if (violations.length === 0) {
   console.log(`✓ guards passed — ${htmlFiles.length} pages checked, 0 violations.`);

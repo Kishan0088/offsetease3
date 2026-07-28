@@ -1,0 +1,38 @@
+{
+  "_comment": "Phase O \u2014 editorial calendar. Recommended cadence: 1 substantive piece / 2 weeks, weighted 2:1 to bottom-funnel + regional. Status: idea|briefed|drafting|review|published. review_due = 6 months after publish (regulatory content decays). Owner + real dates are HUMAN.",
+  "items": [
+    {
+      "slug": "iscc-plus-certification",
+      "cluster": "ISCC",
+      "region": "SEA",
+      "target_keyword": "iscc plus certification malaysia",
+      "funnel": "transactional",
+      "status": "idea",
+      "owner": "TODO",
+      "publish_date": "TODO",
+      "review_date": "TODO"
+    },
+    {
+      "slug": "cbam-compliance-india",
+      "cluster": "CBAM",
+      "region": "India",
+      "target_keyword": "cbam consultant india",
+      "funnel": "transactional",
+      "status": "idea",
+      "owner": "TODO",
+      "publish_date": "TODO",
+      "review_date": "TODO"
+    },
+    {
+      "slug": "eudr-compliance-vietnam",
+      "cluster": "EUDR",
+      "region": "SEA",
+      "target_keyword": "eudr compliance vietnam coffee",
+      "funnel": "commercial",
+      "status": "idea",
+      "owner": "TODO",
+      "publish_date": "TODO",
+      "review_date": "TODO"
+    }
+  ]
+}
