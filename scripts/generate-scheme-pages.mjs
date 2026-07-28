@@ -27,9 +27,10 @@ const schemes = [
     certifies: "Biofuels, bioliquids and biomass fuels",
     market: "EU energy market",
     basis: "EU Renewable Energy Directive (RED III) <!-- VERIFY: directive name/version against the European Commission before publish -->",
-    intro: "ISCC EU is one of four ISCC schemes. It applies to biofuels, bioliquids and biomass fuels seeking access to the EU energy market. This page sets out who needs it, how an OffsetEase engagement runs, and what drives cost — the full regulatory detail is being finalised.",
+    intro: "ISCC EU is the ISCC scheme for biofuels, bioliquids and biomass fuels entering the EU energy market. Below: who needs it, how an OffsetEase engagement runs, and what drives cost.",
     coc: "supplier data, GHG records and documentation",
     deep: "the RED III regulatory context, sustainability and greenhouse-gas-saving criteria, and eligible feedstocks",
+    deepShort: "RED III",
   },
   {
     slug: "iscc-plus-certification", short: "ISCC PLUS", h1: "ISCC PLUS Certification",
@@ -40,9 +41,10 @@ const schemes = [
     certifies: "Bio-based and recycled materials — plastics, chemicals, food, feed",
     market: "Non-energy markets",
     basis: "Mass-balance chain of custody",
-    intro: "ISCC PLUS is one of four ISCC schemes. It applies to bio-based and recycled materials in non-energy markets — chemicals, plastics, food, feed and the circular economy. This page sets out who needs it, how an OffsetEase engagement runs, and what drives cost — the full technical detail is being finalised.",
+    intro: "ISCC PLUS is the ISCC scheme for bio-based and recycled materials in non-energy markets — chemicals, plastics, food and feed. Below: who needs it, how an OffsetEase engagement runs, and what drives cost.",
     coc: "mass-balance bookkeeping, supplier data and documentation",
     deep: "how mass-balance chain of custody works and how the certified attribute is allocated across output",
+    deepShort: "mass-balance",
   },
   {
     slug: "iscc-corsia-certification", short: "ISCC CORSIA", h1: "ISCC CORSIA Certification",
@@ -53,9 +55,10 @@ const schemes = [
     certifies: "Sustainable Aviation Fuel (SAF) and its feedstocks",
     market: "Aviation",
     basis: "ICAO CORSIA programme <!-- VERIFY: scheme scope against ICAO before publish -->",
-    intro: "ISCC CORSIA is one of four ISCC schemes. It applies to Sustainable Aviation Fuel and its feedstocks in the aviation value chain. This page sets out who needs it, how an OffsetEase engagement runs, and what drives cost — the full regulatory detail is being finalised.",
+    intro: "ISCC CORSIA is the ISCC scheme for Sustainable Aviation Fuel and its feedstocks in the aviation value chain. Below: who needs it, how an OffsetEase engagement runs, and what drives cost.",
     coc: "feedstock data, sustainability records and documentation",
     deep: "the ICAO CORSIA programme context and the SAF value chain",
+    deepShort: "CORSIA",
   },
 ];
 
@@ -101,6 +104,12 @@ for (const s of schemes) {
     `<div class="acc__panel"><div class="acc__panel-inner"><div class="acc__body"><p>${a
       .replace("comparison of ISCC EU, PLUS and CORSIA", '<a href="iscc-eu-plus-corsia-which-certification">comparison of ISCC EU, PLUS and CORSIA</a>')
       .replace("what drives cost above", '<a href="#cost">what drives cost above</a>')}</p></div></div></div></div>`).join("");
+  const schemeCards = schemes.map((x) => {
+    const inner = `<h3>${x.short}${x.slug === s.slug ? ' <span style="color:var(--ink-2);font-weight:500">· this page</span>' : ""}</h3><p>${x.certifies}</p>`;
+    return x.slug === s.slug
+      ? `<div class="card" style="border-color:var(--teal-3);cursor:default">${inner}</div>`
+      : `<a class="card" href="${x.slug}">${inner}</a>`;
+  }).join("");
   const relatedLis = [
     `<li><a href="iscc">ISCC certification overview</a></li>`,
     `<li><a href="iscc-eu-plus-corsia-which-certification">ISCC EU vs PLUS vs CORSIA: which certification you need</a></li>`,
@@ -118,9 +127,8 @@ for (const s of schemes) {
     <section><div class="container split">
       <div class="content-section">
         <p style="font-size:var(--fs-lead);color:var(--ink-2);max-width:64ch">${s.intro}</p>
-        <h2 style="margin-top:2rem">What ${s.short} is</h2>
-        ${TODO(`plain-language explanation of ${s.deep}`)}
-        <p>${s.short} is one of the four ISCC schemes. Detailed technical guidance on ${s.deep} is being finalised — for advice specific to your situation, <a href="contact">book a consultation</a>.</p>
+        <p style="max-width:64ch;margin-top:1.1rem">OffsetEase takes you from scheme scoping through data and chain-of-custody preparation to first-audit readiness and ongoing surveillance — the four steps below. Detailed ${s.deepShort} technical guidance is in preparation; for advice specific to your feedstock and market, <a href="contact">book a consultation</a>.</p>
+        ${TODO(`plain-language explanation of ${s.deep} — VERIFY against the issuing body before publish`)}
       </div>
       <aside class="card" style="align-self:start">
         <h3 style="margin-bottom:1rem">At a glance</h3>
@@ -135,6 +143,12 @@ for (const s of schemes) {
     <section><div class="container">
       <h2>How ${s.short} certification runs with OffsetEase</h2>
       <ul class="checklist">${stepsHtml}</ul>
+    </div></section>
+    <section class="bg-paper-2"><div class="container">
+      <h2>Which ISCC scheme do you need?</h2>
+      <p style="max-width:64ch;color:var(--ink-2)">ISCC is a family of schemes — the right one depends on your product and market.</p>
+      <div class="grid-3" style="margin-top:1.5rem">${schemeCards}</div>
+      <p style="max-width:64ch;margin-top:1.5rem">Also need product-level carbon data? ISCC also offers Carbon Footprint (CF) certification — see the <a href="iscc-eu-plus-corsia-which-certification">full comparison of all four schemes</a>.</p>
     </div></section>
     <section id="cost"><div class="container"><div class="prose-page">
       <h2>What drives ${s.short} certification cost</h2>
