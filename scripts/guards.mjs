@@ -162,6 +162,21 @@ for (let a = 0; a < DOORWAY_SLUGS.length; a++) {
   }
 }
 
+// ── Guard 11: .checklist must live inside .content-section (Phase P) ───────
+// The checklist styles are scoped `.content-section ul.checklist ...`; a checklist
+// outside a .content-section renders unstyled (giant icons). Catch it at build.
+for (const f of htmlFiles) {
+  const html = read(f);
+  let idx = 0;
+  while ((idx = html.indexOf('class="checklist"', idx)) !== -1) {
+    const secStart = html.lastIndexOf("<section", idx);
+    if (!html.slice(secStart, idx).includes("content-section")) {
+      add("checklist-outside-content-section", f);
+    }
+    idx += 17;
+  }
+}
+
 // ── Report ─────────────────────────────────────────────────────────────────
 if (violations.length === 0) {
   console.log(`✓ guards passed — ${htmlFiles.length} pages checked, 0 violations.`);

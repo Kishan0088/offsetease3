@@ -141,8 +141,10 @@ for (const s of schemes) {
       </aside>
     </div></section>
     <section><div class="container">
+      <div class="content-section">
       <h2>How ${s.short} certification runs with OffsetEase</h2>
       <ul class="checklist">${stepsHtml}</ul>
+      </div>
     </div></section>
     <section class="bg-paper-2"><div class="container">
       <h2>Which ISCC scheme do you need?</h2>
