@@ -80,8 +80,10 @@ for (const p of pages) {
       </aside>
     </div></section>
     <section><div class="container">
+      <div class="content-section">
       <h2>How OffsetEase works with ${p.country} exporters</h2>
       <ul class="checklist">${stepsHtml}</ul>
+      </div>
     </div></section>
     <section class="related-reading"><div class="container">
       <h2>Related</h2>
