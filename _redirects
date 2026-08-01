@@ -20,6 +20,8 @@
 /climate-risk.html               /climate-risk               301!
 /privacy.html                    /privacy                    301!
 
+/working-with-global-clients   /about   301!
+
 # Catch-all: every other .html URL on the site has the same duplicate problem.
 # This future-proofs any .html path added later.
 /*.html                          /:splat                     301!
