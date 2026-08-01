@@ -702,6 +702,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
 .rr-sectors{margin:1.75rem 0 0;font-size:.95rem;}
 .rr-sectors a{color:var(--teal);text-decoration:none;font-weight:600;}
 .rr-sectors a:hover{text-decoration:underline;}
+.skip-link{position:fixed;top:-120px;left:1rem;z-index:200;background:var(--teal);color:var(--paper);padding:.7rem 1.2rem;border-radius:8px;text-decoration:none;font-weight:600;box-shadow:0 8px 24px -8px rgba(0,0,0,.4);transition:top .2s var(--ease);}.skip-link:focus{top:1rem;}#app:focus{outline:none;}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://offsetease.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://offsetease.com/services"},{"@type":"ListItem","position":3,"name":"CBAM Compliance","item":"https://offsetease.com/cbam"}]},{"@type":"Service","name":"CBAM Compliance","serviceType":"CBAM Compliance","description":"The EU Carbon Border Adjustment Mechanism (CBAM) applies the EU carbon price to imports of iron & steel, aluminium, cement, fertilisers, hydrogen and electricity. In the definitive period, importers must surrender certificates against the embedded emissions of covered goods — and where actual, verified data is missing, punitive default values apply. For exporters to the EU, measurement is now a pricing decision.","url":"https://offsetease.com/cbam","provider":{"@type":"Organization","name":"OffsetEase","url":"https://offsetease.com"},"areaServed":"Global"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Who is legally liable under CBAM — importer or exporter?","acceptedAnswer":{"@type":"Answer","text":"The EU importer (declarant) holds the legal obligation to report and surrender certificates. Commercially, the cost and the data demand flow straight back to the non-EU producer: importers buy from suppliers who can evidence lower embedded emissions, and contracts increasingly pass CBAM cost through."}},{"@type":"Question","name":"What changed when the definitive period started?","acceptedAnswer":{"@type":"Answer","text":"Reporting-only became paying. Importers now purchase and surrender CBAM certificates priced against the EU ETS, and the transitional flexibility on estimates has narrowed to a default-values regime deliberately set high enough to make verified actual data the cheaper option."}},{"@type":"Question","name":"How are embedded emissions calculated?","acceptedAnswer":{"@type":"Answer","text":"At installation level, following the CBAM methodology: direct emissions of the production process, plus indirect electricity emissions for some goods, allocated to the product. The data architecture overlaps heavily with GHG accounting and product carbon footprinting — built once, it serves all three."}},{"@type":"Question","name":"Will CBAM expand to more products?","acceptedAnswer":{"@type":"Answer","text":"The EU has signalled review of scope extension to downstream and additional carbon-intensive goods; chemicals and polymers are widely expected candidates. Exporters in adjacent categories gain more from preparing early than from waiting for the legal text."}},{"@type":"Question","name":"What happens if we do nothing?","acceptedAnswer":{"@type":"Answer","text":"Your EU customers pay certificates on default values materially above your likely actual emissions, your products carry an artificial cost disadvantage against measured competitors, and procurement teams substitute suppliers who can hand them verified data. The penalty is commercial before it is legal."}}]}]}</script>
 <!-- Cookieless analytics (Phase G) — no cookies, no consent banner. Set ANALYTICS.domain to your real domain to activate (Plausible shown; Fathom/Umami: swap src + API). -->
@@ -733,6 +734,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
 <style>.key-facts{background:var(--paper-2)}.key-facts__list{list-style:none;margin:1.25rem 0 0;padding:0;display:grid;gap:.9rem;max-width:75ch}.key-facts__list li{padding-left:1.6rem;position:relative;color:var(--ink);line-height:1.5}.key-facts__list li::before{content:"";position:absolute;left:0;top:.55em;width:.6rem;height:.6rem;border-radius:2px;background:var(--accent)}</style></head>
 
 <body>
+<a class="skip-link" href="#app">Skip to content</a>
 
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
@@ -800,7 +802,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
         Book a Consultation
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <button class="nav__burger" id="burger" aria-label="Open menu">
+      <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7" stroke-linecap="round"/><line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"/><line x1="4" y1="17" x2="20" y2="17" stroke-linecap="round"/></svg>
       </button>
     </div>
@@ -830,7 +832,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
 
 </aside>
 
-<main id="app">
+<main id="app" tabindex="-1">
     <section class="page-header">
       <div class="container">
         <div class="crumbs">
@@ -846,7 +848,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
     </section><div class="subnav">
       <div class="container">
         <div class="subnav__inner">
-          <a href="ghg-accounting" class="">GHG Accounting</a><a href="product-carbon-footprint" class="">PCF</a><a href="life-cycle-assessment" class="">LCA</a><a href="epd" class="">EPD</a><a href="ecovadis" class="">EcoVadis</a><a href="cdp" class="">CDP</a><a href="cbam" class="is-active">CBAM</a><a href="esg-reporting" class="">ESG Reporting</a><a href="climate-risk" class="">Climate Risk</a><a href="sbti" class="">SBTi</a><a href="net-zero" class="">Net Zero</a><a href="carbon-credits" class="">Carbon Credits</a><a href="renewable-energy" class="">Renewable Energy</a><a href="iscc" class="">ISCC</a><a href="eudr" class="">EUDR</a>
+          <a href="ghg-accounting" class="">GHG Accounting</a><a href="product-carbon-footprint" class="">PCF</a><a href="life-cycle-assessment" class="">LCA</a><a href="epd" class="">EPD</a><a href="ecovadis" class="">EcoVadis</a><a href="cdp" class="">CDP</a><a href="cbam" class="is-active" aria-current="page">CBAM</a><a href="esg-reporting" class="">ESG Reporting</a><a href="climate-risk" class="">Climate Risk</a><a href="sbti" class="">SBTi</a><a href="net-zero" class="">Net Zero</a><a href="carbon-credits" class="">Carbon Credits</a><a href="renewable-energy" class="">Renewable Energy</a><a href="iscc" class="">ISCC</a><a href="eudr" class="">EUDR</a>
         </div>
       </div>
     </div>
@@ -1071,8 +1073,8 @@ const onScroll = () => {
 };
 window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
 const burger = document.getElementById('burger'), mm = document.getElementById('mobileMenu'), scrim = document.getElementById('scrim');
-const closeMobile = () => { mm && mm.classList.remove('is-open'); scrim && scrim.classList.remove('is-open'); };
-burger && burger.addEventListener('click', () => { mm.classList.add('is-open'); scrim.classList.add('is-open'); });
+const closeMobile = () => { mm && mm.classList.remove('is-open'); scrim && scrim.classList.remove('is-open'); burger && burger.setAttribute('aria-expanded','false'); };
+burger && burger.addEventListener('click', () => { mm.classList.add('is-open'); scrim.classList.add('is-open'); burger.setAttribute('aria-expanded','true'); });
 scrim && scrim.addEventListener('click', closeMobile);
 const mc = document.getElementById('mobileClose'); mc && mc.addEventListener('click', closeMobile);
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobile(); });

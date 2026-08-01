@@ -116,7 +116,7 @@ for (const s of schemes) {
     ...sib(s.slug).map((x) => `<li><a href="${x.slug}">${x.h1}</a></li>`)].join("");
 
   const content = `${jsonld}
-<main id="app">
+<main id="app" tabindex="-1">
     <section class="page-header"><div class="container">
       <div class="crumbs"><a href="./">Home</a><span class="sep">/</span><a href="services">Services</a><span class="sep">/</span><a href="iscc">ISCC</a><span class="sep">/</span><span class="current">${s.short}</span></div>
       <span class="eyebrow">Comply</span>
