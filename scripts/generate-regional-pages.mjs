@@ -55,7 +55,7 @@ for (const p of pages) {
   const stepsHtml = steps(p).map(([t, d], i) => `<li>${CHECK}<div><b>0${i + 1} — ${t}</b><span>${d}</span></div></li>`).join("");
 
   const content = `${jsonld}
-<main id="app">
+<main id="app" tabindex="-1">
     <section class="page-header"><div class="container">
       <div class="crumbs"><a href="./">Home</a><span class="sep">/</span><a href="services">Services</a><span class="sep">/</span><a href="${p.service}">${p.serviceName}</a><span class="sep">/</span><span class="current">${p.country}</span></div>
       <span class="eyebrow">${p.eyebrow}</span>

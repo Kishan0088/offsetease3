@@ -692,6 +692,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
   .cert-grid{grid-template-columns:1fr;}
 }
 
+.skip-link{position:fixed;top:-120px;left:1rem;z-index:200;background:var(--teal);color:var(--paper);padding:.7rem 1.2rem;border-radius:8px;text-decoration:none;font-weight:600;box-shadow:0 8px 24px -8px rgba(0,0,0,.4);transition:top .2s var(--ease);}.skip-link:focus{top:1rem;}#app:focus{outline:none;}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What kind of clients do you typically work with?", "acceptedAnswer": {"@type": "Answer", "text": "Listed and private companies — usually mid-cap to large — across export-heavy and regulated industries. Most clients share three things: something concrete at stake (a contract, target, deadline or financing), a CFO-led decision process, and a preference for one multi-year relationship over a series of projects."}}, {"@type": "Question", "name": "Where are you based?", "acceptedAnswer": {"@type": "Answer", "text": "We are based in India, with senior practitioners working across India, Southeast Asia, the EU and the Middle East. We work in person and on hybrid engagement models."}}, {"@type": "Question", "name": "Do you do project work or only retainers?", "acceptedAnswer": {"@type": "Answer", "text": "Both. Strategy and reporting engagements typically run as fixed-scope projects (4-9 months). Embedded advisory runs as multi-year retained engagements at agreed cadence."}}, {"@type": "Question", "name": "How do engagements typically start?", "acceptedAnswer": {"@type": "Answer", "text": "With a 30-minute conversation. We size the problem, confirm we are the right fit, and either propose an engagement or point you elsewhere. We do not pitch work we cannot defensibly deliver."}}, {"@type": "Question", "name": "What does pricing look like?", "acceptedAnswer": {"@type": "Answer", "text": "Engagements are scoped and fee-quoted. We do not work on a time-and-materials basis. Embedded advisory is priced on annual retainer."}}, {"@type": "Question", "name": "Will we work with senior partners or junior teams?", "acceptedAnswer": {"@type": "Answer", "text": "Senior partners lead and run engagements. Our model does not depend on associate leverage."}}, {"@type": "Question", "name": "Has the EU Omnibus changed our compliance obligations?", "acceptedAnswer": {"@type": "Answer", "text": "It reduced the scope of CSRD and CSDDD and narrowed some specific obligations. It did not reverse the substantive direction of EU sustainability regulation. Companies still in scope continue to face mandatory, assured, substantive disclosure and due diligence."}}, {"@type": "Question", "name": "Do we need SBTi validation for our climate targets?", "acceptedAnswer": {"@type": "Answer", "text": "SBTi has become the de facto standard for credible corporate climate targets. Investors and customers increasingly expect it; the methodology discipline also strengthens the underlying strategy. For most large companies, validation is now worth the effort."}}, {"@type": "Question", "name": "Is BRSR Core only for the very largest companies?", "acceptedAnswer": {"@type": "Answer", "text": "BRSR Core reasonable assurance has activated for the top tier of Indian listed entities and is scheduled to expand. Verify the current threshold and timeline against the latest SEBI position before assuming applicability."}}, {"@type": "Question", "name": "How early should we prepare for sustainability assurance?", "acceptedAnswer": {"@type": "Answer", "text": "One full reporting cycle before mandatory assurance is the minimum. Two cycles is materially more comfortable. Companies that start during the assurance cycle itself routinely restate prior data."}}]}</script>
 <!-- Cookieless analytics (Phase G) — no cookies, no consent banner. Set ANALYTICS.domain to your real domain to activate (Plausible shown; Fathom/Umami: swap src + API). -->
@@ -723,6 +724,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
 </head>
 
 <body>
+<a class="skip-link" href="#app">Skip to content</a>
 
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
@@ -790,7 +792,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
         Book a Consultation
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <button class="nav__burger" id="burger" aria-label="Open menu">
+      <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7" stroke-linecap="round"/><line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"/><line x1="4" y1="17" x2="20" y2="17" stroke-linecap="round"/></svg>
       </button>
     </div>
@@ -820,7 +822,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
 
 </aside>
 
-<main id="app">
+<main id="app" tabindex="-1">
     <section class="page-header">
       <div class="container">
         <div class="crumbs"><a href="./">Home</a><span class="sep">/</span><span class="current">FAQs</span></div>
@@ -984,8 +986,8 @@ const onScroll = () => {
 };
 window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
 const burger = document.getElementById('burger'), mm = document.getElementById('mobileMenu'), scrim = document.getElementById('scrim');
-const closeMobile = () => { mm && mm.classList.remove('is-open'); scrim && scrim.classList.remove('is-open'); };
-burger && burger.addEventListener('click', () => { mm.classList.add('is-open'); scrim.classList.add('is-open'); });
+const closeMobile = () => { mm && mm.classList.remove('is-open'); scrim && scrim.classList.remove('is-open'); burger && burger.setAttribute('aria-expanded','false'); };
+burger && burger.addEventListener('click', () => { mm.classList.add('is-open'); scrim.classList.add('is-open'); burger.setAttribute('aria-expanded','true'); });
 scrim && scrim.addEventListener('click', closeMobile);
 const mc = document.getElementById('mobileClose'); mc && mc.addEventListener('click', closeMobile);
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobile(); });

@@ -702,6 +702,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
 .rr-sectors{margin:1.75rem 0 0;font-size:.95rem;}
 .rr-sectors a{color:var(--teal);text-decoration:none;font-weight:600;}
 .rr-sectors a:hover{text-decoration:underline;}
+.skip-link{position:fixed;top:-120px;left:1rem;z-index:200;background:var(--teal);color:var(--paper);padding:.7rem 1.2rem;border-radius:8px;text-decoration:none;font-weight:600;box-shadow:0 8px 24px -8px rgba(0,0,0,.4);transition:top .2s var(--ease);}.skip-link:focus{top:1rem;}#app:focus{outline:none;}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://offsetease.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://offsetease.com/services"},{"@type":"ListItem","position":3,"name":"Life Cycle Assessment (LCA)","item":"https://offsetease.com/life-cycle-assessment"}]},{"@type":"Service","name":"Life Cycle Assessment (LCA)","serviceType":"Life Cycle Assessment (LCA)","description":"Life Cycle Assessment (LCA) is the ISO 14040/14044 method for quantifying a product's environmental impacts — climate, water, resource use, toxicity and more — across its full life from raw-material extraction to end of life. It is the evidence base behind credible product claims, EPDs, ecodesign decisions and anti-greenwashing defence.","url":"https://offsetease.com/life-cycle-assessment","provider":{"@type":"Organization","name":"OffsetEase","url":"https://offsetease.com"},"areaServed":"Global"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the difference between a screening LCA and a full LCA?","acceptedAnswer":{"@type":"Answer","text":"A screening LCA uses secondary data and simplified boundaries to find hotspots and direct decisions — fast and inexpensive. A full ISO 14044 LCA with critical review is required for public comparative claims and EPDs. Most clients start with screening and deepen only where the business case demands."}},{"@type":"Question","name":"How long does an LCA take?","acceptedAnswer":{"@type":"Answer","text":"Screening studies complete in 4–8 weeks. Full critical-review LCAs typically take 4–6 months, with data collection — not modelling — as the bottleneck."}},{"@type":"Question","name":"Can we make comparative environmental claims?","acceptedAnswer":{"@type":"Answer","text":"Yes, with discipline. ISO 14044 requires a critical review by a panel for public comparative assertions, and anti-greenwashing rules increasingly require the underlying study to be disclosed. We structure both the LCA and the claim language to survive that review."}},{"@type":"Question","name":"Which LCA databases do you use?","acceptedAnswer":{"@type":"Answer","text":"Recognised commercial and regional databases (such as ecoinvent) selected per study, documented per dataset. Database choice and assumptions are always disclosed — it is the first thing a reviewer checks."}},{"@type":"Question","name":"LCA, PCF or EPD — which do we need?","acceptedAnswer":{"@type":"Answer","text":"LCA is the underlying multi-impact method. A PCF is the climate-only subset. An EPD is a third-party-verified, registered disclosure built on an LCA to category rules. The right starting point depends on who is asking — we map the demand before scoping the study."}}]}]}</script>
 <!-- Cookieless analytics (Phase G) — no cookies, no consent banner. Set ANALYTICS.domain to your real domain to activate (Plausible shown; Fathom/Umami: swap src + API). -->
@@ -733,6 +734,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
 </head>
 
 <body>
+<a class="skip-link" href="#app">Skip to content</a>
 
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
@@ -800,7 +802,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
         Book a Consultation
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <button class="nav__burger" id="burger" aria-label="Open menu">
+      <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7" stroke-linecap="round"/><line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"/><line x1="4" y1="17" x2="20" y2="17" stroke-linecap="round"/></svg>
       </button>
     </div>
@@ -830,7 +832,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
 
 </aside>
 
-<main id="app">
+<main id="app" tabindex="-1">
     <section class="page-header">
       <div class="container">
         <div class="crumbs">
@@ -848,7 +850,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
     <div class="subnav">
       <div class="container">
         <div class="subnav__inner">
-          <a href="ghg-accounting" class="">GHG Accounting</a><a href="product-carbon-footprint" class="">PCF</a><a href="life-cycle-assessment" class="is-active">LCA</a><a href="epd" class="">EPD</a><a href="ecovadis" class="">EcoVadis</a><a href="cdp" class="">CDP</a><a href="cbam" class="">CBAM</a><a href="esg-reporting" class="">ESG Reporting</a><a href="climate-risk" class="">Climate Risk</a><a href="sbti" class="">SBTi</a><a href="net-zero" class="">Net Zero</a><a href="carbon-credits" class="">Carbon Credits</a><a href="renewable-energy" class="">Renewable Energy</a><a href="iscc" class="">ISCC</a><a href="eudr" class="">EUDR</a>
+          <a href="ghg-accounting" class="">GHG Accounting</a><a href="product-carbon-footprint" class="">PCF</a><a href="life-cycle-assessment" class="is-active" aria-current="page">LCA</a><a href="epd" class="">EPD</a><a href="ecovadis" class="">EcoVadis</a><a href="cdp" class="">CDP</a><a href="cbam" class="">CBAM</a><a href="esg-reporting" class="">ESG Reporting</a><a href="climate-risk" class="">Climate Risk</a><a href="sbti" class="">SBTi</a><a href="net-zero" class="">Net Zero</a><a href="carbon-credits" class="">Carbon Credits</a><a href="renewable-energy" class="">Renewable Energy</a><a href="iscc" class="">ISCC</a><a href="eudr" class="">EUDR</a>
         </div>
       </div>
     </div>
@@ -1071,8 +1073,8 @@ const onScroll = () => {
 };
 window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
 const burger = document.getElementById('burger'), mm = document.getElementById('mobileMenu'), scrim = document.getElementById('scrim');
-const closeMobile = () => { mm && mm.classList.remove('is-open'); scrim && scrim.classList.remove('is-open'); };
-burger && burger.addEventListener('click', () => { mm.classList.add('is-open'); scrim.classList.add('is-open'); });
+const closeMobile = () => { mm && mm.classList.remove('is-open'); scrim && scrim.classList.remove('is-open'); burger && burger.setAttribute('aria-expanded','false'); };
+burger && burger.addEventListener('click', () => { mm.classList.add('is-open'); scrim.classList.add('is-open'); burger.setAttribute('aria-expanded','true'); });
 scrim && scrim.addEventListener('click', closeMobile);
 const mc = document.getElementById('mobileClose'); mc && mc.addEventListener('click', closeMobile);
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobile(); });

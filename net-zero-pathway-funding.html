@@ -692,6 +692,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
   .cert-grid{grid-template-columns:1fr;}
 }
 
+.skip-link{position:fixed;top:-120px;left:1rem;z-index:200;background:var(--teal);color:var(--paper);padding:.7rem 1.2rem;border-radius:8px;text-decoration:none;font-weight:600;box-shadow:0 8px 24px -8px rgba(0,0,0,.4);transition:top .2s var(--ease);}.skip-link:focus{top:1rem;}#app:focus{outline:none;}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://offsetease.com/"},{"@type":"ListItem","position":2,"name":"Insights","item":"https://offsetease.com/insights"},{"@type":"ListItem","position":3,"name":"Funding the net-zero transition: building a pathway your CFO will actually finance","item":"https://offsetease.com/net-zero-pathway-funding"}]},{"@type":"BlogPosting","headline":"Funding the net-zero transition: building a pathway your CFO will actually finance","description":"The gap between a net-zero pledge and a funded plan is a cost curve, a capital plan and financing. How to build a business case the board approves.","url":"https://offsetease.com/net-zero-pathway-funding","datePublished":"2026-06-01","dateModified":"2026-07-28","author":{"@type":"Organization","name":"OffsetEase"},"publisher":{"@type":"Organization","name":"OffsetEase","url":"https://offsetease.com","logo":{"@type":"ImageObject","url":"https://offsetease.com/og-cover.png"}},"articleSection":"Net Zero","inLanguage":"en"}]}</script>
 <!-- Cookieless analytics (Phase G) — no cookies, no consent banner. Set ANALYTICS.domain to your real domain to activate (Plausible shown; Fathom/Umami: swap src + API). -->
@@ -723,6 +724,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
 </head>
 
 <body>
+<a class="skip-link" href="#app">Skip to content</a>
 
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
@@ -790,7 +792,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
         Book a Consultation
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <button class="nav__burger" id="burger" aria-label="Open menu">
+      <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7" stroke-linecap="round"/><line x1="4" y1="12" x2="20" y2="12" stroke-linecap="round"/><line x1="4" y1="17" x2="20" y2="17" stroke-linecap="round"/></svg>
       </button>
     </div>
@@ -820,7 +822,7 @@ section{padding-block:clamp(3.5rem,7vw,6rem);}
 
 </aside>
 
-<main id="app">
+<main id="app" tabindex="-1">
     <section class="page-header">
       <div class="container">
         <div class="crumbs"><a href="./">Home</a><span class="sep">/</span><a href="insights">Insights</a><span class="sep">/</span><span class="current">Net Zero</span></div>
@@ -964,8 +966,8 @@ const onScroll = () => {
 };
 window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
 const burger = document.getElementById('burger'), mm = document.getElementById('mobileMenu'), scrim = document.getElementById('scrim');
-const closeMobile = () => { mm && mm.classList.remove('is-open'); scrim && scrim.classList.remove('is-open'); };
-burger && burger.addEventListener('click', () => { mm.classList.add('is-open'); scrim.classList.add('is-open'); });
+const closeMobile = () => { mm && mm.classList.remove('is-open'); scrim && scrim.classList.remove('is-open'); burger && burger.setAttribute('aria-expanded','false'); };
+burger && burger.addEventListener('click', () => { mm.classList.add('is-open'); scrim.classList.add('is-open'); burger.setAttribute('aria-expanded','true'); });
 scrim && scrim.addEventListener('click', closeMobile);
 const mc = document.getElementById('mobileClose'); mc && mc.addEventListener('click', closeMobile);
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobile(); });
