@@ -1,0 +1,117 @@
+{
+  "_comment": "Single source of truth for Insights cards, NEWEST FIRST. To add an insight: create the article page, then add an entry at the TOP here. `npm run build` regenerates the homepage (latest 3) and /insights (all) automatically via scripts/render-insights.mjs.",
+  "insights": [
+    {
+      "slug": "cbam-iron-steel-strategy",
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><path d=\"M14 3l7 7-4 4-7-7zM10 7l-7 7 4 4 7-7M3 21h18\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "tag": "Regulation",
+      "meta": "August 2026 · 10 min read",
+      "title": "CBAM strategy for iron &amp; steel: what exporters must decide in 2026",
+      "dek": "CBAM is now a carbon price at the EU border for steel — the widest scope, the highest emissions. Verified data vs default values, and how to turn it into an edge."
+    },
+    {
+      "slug": "cbam-definitive-period-2026",
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><path d=\"M14 3l7 7-4 4-7-7zM10 7l-7 7 4 4 7-7M3 21h18\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "tag": "Regulation",
+      "meta": "June 2026 · 9 min read",
+      "title": "CBAM in 2026: the definitive period, the Omnibus simplification, and what exporters must do now",
+      "dek": "From 1 January 2026 the EU Carbon Border Adjustment Mechanism stops being a reporting exercise and becomes a cost. Here is what changed, who is now exempt, and the moves that protect your margin."
+    },
+    {
+      "slug": "sbti-net-zero-standard-v2",
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><path d=\"M3 17l6-6 4 4 8-8M14 7h7v7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "tag": "Net Zero",
+      "meta": "June 2026 · 10 min read",
+      "title": "SBTi's Corporate Net-Zero Standard V2: what the draft changes — and how to prepare",
+      "dek": "In 2025 the Science Based Targets initiative opened a draft of Version 2 of its Corporate Net-Zero Standard for consultation. It is not final — but the direction is clear, and target-setting companies should prepare now."
+    },
+    {
+      "slug": "cdp-disclosure-2026",
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M16 8l-2 6-6 2 2-6z\" stroke-linejoin=\"round\"/></svg>",
+      "tag": "Disclosure",
+      "meta": "June 2026 · 8 min read",
+      "title": "CDP after the overhaul: one questionnaire, IFRS-aligned, and how to score well",
+      "dek": "CDP consolidated its separate questionnaires into a single, IFRS-aligned disclosure on a new platform. Here is how the system now works, how scoring is decided, and what actually moves your grade."
+    },
+    {
+      "slug": "brsr-core-assurance-india",
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><path d=\"M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z\" stroke-linejoin=\"round\"/></svg>",
+      "tag": "Disclosure",
+      "meta": "June 2026 · 9 min read",
+      "title": "BRSR Core explained: India's assured sustainability disclosure and the value-chain ripple",
+      "dek": "India's BRSR has moved from narrative to assured data. BRSR Core requires reasonable assurance on a defined set of KPIs — and pushes ESG requirements down the value chain to unlisted suppliers."
+    },
+    {
+      "slug": "lca-pcf-epd-difference",
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><path d=\"M12 3l9 5-9 5-9-5 9-5zM3 13l9 5 9-5M3 18l9 5 9-5\" stroke-linejoin=\"round\"/></svg>",
+      "tag": "Product Sustainability",
+      "meta": "June 2026 · 8 min read",
+      "title": "LCA, PCF and EPD: which one your buyers are actually asking for",
+      "dek": "As carbon requirements move from the company to the product, three acronyms dominate procurement conversations. They are related but not interchangeable — and choosing the wrong one wastes months."
+    },
+    {
+      "slug": "eudr-deforestation-regulation-explained",
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><path d=\"M10 14a4 4 0 005.66 0l3-3a4 4 0 00-5.66-5.66L11 7M14 10a4 4 0 00-5.66 0l-3 3a4 4 0 005.66 5.66L13 17\" stroke-linecap=\"round\"/></svg>",
+      "tag": "Regulation",
+      "meta": "June 2026 · 9 min read",
+      "title": "EUDR explained: deforestation-free supply chains, plot-level geolocation, and the deadline",
+      "dek": "Seven commodities banned from the EU market unless proven deforestation-free and traceable to the plot. What EUDR demands — and how to prepare."
+    },
+    {
+      "slug": "ecovadis-scoring-bronze-to-gold",
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><path d=\"M12 3l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.5l-5.3 2.7 1-5.9L3.5 9.2l5.9-.8z\" stroke-linejoin=\"round\"/></svg>",
+      "tag": "Ratings",
+      "meta": "June 2026 · 8 min read",
+      "title": "How EcoVadis scoring really works — and how to move from Bronze to Gold",
+      "dek": "EcoVadis scores suppliers on four themes, with medals on a percentile curve. What the score really rewards — and how to move from Bronze to Gold."
+    },
+    {
+      "slug": "iscc-eu-plus-corsia-which-certification",
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><path d=\"M9 3h6M10 3v6L5 19a2 2 0 002 3h10a2 2 0 002-3l-5-10V3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "tag": "Certification",
+      "meta": "June 2026 · 8 min read",
+      "title": "ISCC EU vs ISCC PLUS vs CORSIA: which certification your business needs",
+      "dek": "ISCC EU, PLUS, CORSIA and Carbon Footprint serve different markets. How to choose the right certification — or the right combination."
+    },
+    {
+      "slug": "scope-3-emissions-measurement",
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18\" stroke-linecap=\"round\"/></svg>",
+      "tag": "Carbon Accounting",
+      "meta": "June 2026 · 9 min read",
+      "title": "Scope 3 emissions: why they are most of your footprint and how to actually measure them",
+      "dek": "Scope 3 is typically 70–90% of your footprint and the hardest to measure. The 15 categories, the methods that work, and where to start."
+    },
+    {
+      "slug": "ifrs-s1-s2-issb-explained",
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><path d=\"M12 3v18M5 21h14M6 7l-3 7h6l-3-7zM18 7l-3 7h6l-3-7zM6 3l12 0M5 3l2 4M19 3l-2 4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "tag": "Disclosure",
+      "meta": "June 2026 · 9 min read",
+      "title": "IFRS S1 and S2 explained: the global baseline for sustainability disclosure",
+      "dek": "IFRS S1 and S2 are the global baseline for sustainability and climate disclosure. What they require, who must comply, and how to prepare."
+    },
+    {
+      "slug": "carbon-credit-integrity-icvcm-vcmi",
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v10M9 10c0-1.5 1.3-2 3-2s3 .5 3 2-1.3 2-3 2-3 .5-3 2 1.3 2 3 2 3-.5 3-2\" stroke-linecap=\"round\"/></svg>",
+      "tag": "Carbon Markets",
+      "meta": "June 2026 · 9 min read",
+      "title": "High-integrity carbon credits: ICVCM, VCMI, and how to avoid the headline risk",
+      "dek": "The carbon market has split on integrity — ICVCM defines the credit, VCMI the claim. What separates a quality carbon asset from a liability."
+    },
+    {
+      "slug": "net-zero-pathway-funding",
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><path d=\"M3 17l6-6 4 4 8-8M14 7h7v7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>",
+      "tag": "Net Zero",
+      "meta": "June 2026 · 9 min read",
+      "title": "Funding the net-zero transition: building a pathway your CFO will actually finance",
+      "dek": "The gap between a net-zero pledge and a funded plan is a cost curve, a capital plan and financing. How to build a business case the board approves."
+    },
+    {
+      "slug": "i-rec-renewable-energy-certificates",
+      "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\"><path d=\"M12 2v6M12 16v6M2 12h6M16 12h6M5 5l4 4M15 15l4 4M5 19l4-4M15 9l4-4\" stroke-linecap=\"round\"/></svg>",
+      "tag": "Renewable Energy",
+      "meta": "June 2026 · 8 min read",
+      "title": "I-RECs explained: how energy attribute certificates cut your Scope 2 — credibly",
+      "dek": "I-RECs let companies claim renewable electricity and cut market-based Scope 2 worldwide. How they work — and what makes a claim hold up."
+    }
+  ]
+}
