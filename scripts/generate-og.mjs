@@ -8,7 +8,7 @@ const TEAL = "#0c4d56", PAPER = "#faf8f4", COPPER = "#c4733a", MUTED = "#9fc0c4"
 
 const SERVICES = ["ghg-accounting","product-carbon-footprint","life-cycle-assessment","epd","ecovadis","cdp","cbam","esg-reporting","climate-risk","iscc","eudr","sbti","net-zero","carbon-credits","renewable-energy"];
 const SCHEMES = ["iscc-eu-certification","iscc-plus-certification","iscc-corsia-certification"];
-const ARTICLES = ["iscc-eu-plus-corsia-which-certification","cbam-definitive-period-2026","sbti-net-zero-standard-v2","cdp-disclosure-2026","brsr-core-assurance-india","lca-pcf-epd-difference","eudr-deforestation-regulation-explained","ecovadis-scoring-bronze-to-gold","scope-3-emissions-measurement","ifrs-s1-s2-issb-explained","carbon-credit-integrity-icvcm-vcmi","net-zero-pathway-funding","i-rec-renewable-energy-certificates"];
+const ARTICLES = ["cbam-iron-steel-strategy","iscc-eu-plus-corsia-which-certification","cbam-definitive-period-2026","sbti-net-zero-standard-v2","cdp-disclosure-2026","brsr-core-assurance-india","lca-pcf-epd-difference","eudr-deforestation-regulation-explained","ecovadis-scoring-bronze-to-gold","scope-3-emissions-measurement","ifrs-s1-s2-issb-explained","carbon-credit-integrity-icvcm-vcmi","net-zero-pathway-funding","i-rec-renewable-energy-certificates"];
 
 const h1of = (slug) => {
   const f = slug + ".html";
